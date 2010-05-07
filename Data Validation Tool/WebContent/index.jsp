@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/main.css"/>
 <link rel="stylesheet" href="css/indexEl.css"/>
 <script type="text/javascript" src="js/jquery.js"></script>
+
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -26,6 +27,30 @@ $(document).ready(function() {
 		return false;
 	});
 
+
+	 $("#selectAllQ").click(function(){
+	    $("#tab1>input:checkbox").each(function(){
+	                this.checked = true;
+	    });
+	    $("#tab2>input:checkbox").each(function(){
+            this.checked = true;
+		});
+	    $("#tab3>*>input:checkbox").each(function(){
+            this.checked = true;
+		});
+	 });
+
+	 $("#deselectAllQ").click(function(){
+		    $("#tab1>input:checkbox").each(function(){
+		        this.checked = false;
+		    });
+		    $("#tab2>input:checkbox").each(function(){
+                this.checked = false;
+   			 });
+		    $("#tab3>*>input:checkbox").each(function(){
+                this.checked = false;
+    		});
+		 });
 });
 </script>
 </head>
@@ -159,8 +184,8 @@ $(document).ready(function() {
     </div>
     
     <div id="opButtons">
-    	<button>Select All Queries</button>
-    	<button>Deselect All Queries</button><br/>
+    	<p id="selectAllQ">Select All Queries</p>
+    	<p id="deselectAllQ">Deselect All Queries</p><br/>
     	<input type="reset" value="RESET"/>
    		<input type="submit" value="RUN"/>
     
