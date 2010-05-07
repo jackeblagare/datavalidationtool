@@ -7,7 +7,10 @@ body {
 	color: #444;
 }
 h1 {font-size: 3em; margin: 20px 0;}
-.container {width: 900px; margin: 10px auto;}
+.container {
+	width: 900px; 
+	margin: 50px; /*auto*/
+}
 ul.tabs {
 	margin: 0;
 	padding: 0;

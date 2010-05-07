@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Data Validation Tool</title>
 <link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="css/indexEl.css"/>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 
@@ -21,7 +22,7 @@ $(document).ready(function() {
 		$(this).addClass("active"); //Add "active" class to selected tab
 		$(".tab_content").hide(); //Hide all tab content
 		var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
-		$(activeTab).fadeIn(); //Fade in the active content
+		$(activeTab).fadeIn(300); //Fade in the active content
 		return false;
 	});
 
@@ -30,8 +31,8 @@ $(document).ready(function() {
 </head>
 
 <body>
-
-<div class="container">
+<br/>
+<div id="data" class="container">
 	<form> <!-- FORM -->
     <ul class="tabs">
         <li><a href="#tab1">Data Management System</a></li>
@@ -124,7 +125,6 @@ $(document).ready(function() {
        			</fieldset>
        			<fieldset>
        				<legend><b>DMS</b></legend>
-       				<legend><b>GMS</b></legend>
        				<button id="dmsSelectAll">Select All</button>
        				<button id="dmsDSelectAll">Deselect All</button>
        				<br/>
@@ -137,7 +137,37 @@ $(document).ready(function() {
        			
         </div>
     </div>
+   
+    <div id="check">
+    	<p><b>Check:</b></p>
+    	<input type="checkbox" name="cdb" />Central Database<br/>
+    	<input type="checkbox" name="ldb" />Local Database		
+    </div>
+    
+    <div id="output">
+    	<input type="checkbox" name="createFile"/>Create file(s) with error-flagged records?<br/>
+    	<fieldset>
+    		<legend>Output file type</legend>
+    		<input type="radio" name="file"/>Text (.txt)<br/>
+    		<input type="radio" name="file"/>PDF (.pdf)
+    	</fieldset>
+    	<fieldset>
+    		<legend>Output file name</legend>
+    		<input type="radio" name="filename"/>Timestamp first <input type="checkbox" name="errorDesc"/> Include error description<br/>
+    		<input type="radio" name="filename"/>Error code first
+    	</fieldset>
+    </div>
+    
+    <div id="opButtons">
+    	<button>Select All Queries</button>
+    	<button>Deselect All Queries</button><br/>
+    	<input type="reset" value="RESET"/>
+   		<input type="submit" value="RUN"/>
+    
+    </div>
     </form>
+    
+    
 </div>
 </body>
 </html>
