@@ -29,6 +29,7 @@ $(document).ready(function() {
 
 
 	 $("#selectAllQ").click(function(){
+		this.blur();
 	    $("#tab1>input:checkbox").each(function(){
 	                this.checked = true;
 	    });
@@ -41,6 +42,7 @@ $(document).ready(function() {
 	 });
 
 	 $("#deselectAllQ").click(function(){
+		 	this.blur();
 		    $("#tab1>input:checkbox").each(function(){
 		        this.checked = false;
 		    });
@@ -184,10 +186,12 @@ $(document).ready(function() {
     </div>
     
     <div id="opButtons">
-    	<p id="selectAllQ">Select All Queries</p>
-    	<p id="deselectAllQ">Deselect All Queries</p><br/>
-    	<input type="reset" value="RESET"/>
-   		<input type="submit" value="RUN"/>
+    	<a class="button" id="selectAllQ" href="#"><span>Select All Queries</span></a> 
+    	<a class="button" id="deselectAllQ" href="#"><span>Deselect All Queries</span></a>
+ 	</div>
+ 	<div id="opButtons2">  
+    	<input class="button" type="reset" value="RESET"/>
+   		<input class="button" type="submit" value="RUN"/>
     
     </div>
     </form>
