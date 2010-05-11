@@ -60,7 +60,7 @@ $(document).ready(function() {
 <body>
 <br/>
 <div id="data" class="container">
-	<form> <!-- FORM -->
+	<form method="post"> <!-- FORM -->
     <ul class="tabs">
         <li><a href="#tab1">Data Management System</a></li>
         <li><a href="#tab2">Implementation-specific</a></li>
