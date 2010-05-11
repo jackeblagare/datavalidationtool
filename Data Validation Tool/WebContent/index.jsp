@@ -113,9 +113,9 @@ $(document).ready(function() {
         		<input type="checkbox" name="GMSngdate"/> NDATE vs GDATE <br/>
         		<fieldset>
         			<legend>Precision</legend>
-        			<input type="radio" name="prec" value="year">Year (YYYY)</input>
-        			<input type="radio" name="prec" value="ym">Year and month (YYYYMM)</input>
-        			<input type="radio" name="prec" value="ymd">Year, month, and day (YYYYMMDD)</input>
+        			<input type="radio" name="prec" value="year"/>Year (YYYY)
+        			<input type="radio" name="prec" value="ym"/>Year and month (YYYYMM)
+        			<input type="radio" name="prec" value="ymd"/>Year, month, and day (YYYYMMDD)
         		</fieldset>
         	</fieldset>  
         </div>
