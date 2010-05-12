@@ -186,5 +186,7 @@
 		query.mapQuery("GMSusrs");
 	}
 	
-	out.print(query.getQueryList()[0]);
+	for(int i = 0;i < query.list;i++){
+		out.print(query.getQueryList()[i] + "<br /><br />");
+	}
 %>
