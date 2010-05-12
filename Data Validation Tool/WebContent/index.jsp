@@ -60,7 +60,7 @@ $(document).ready(function() {
 <body>
 <br/>
 <div id="data" class="container">
-	<form method="post"> <!-- FORM -->
+	<form method="post" action="process.jsp" > <!-- FORM -->
     <ul class="tabs">
         <li><a href="#tab1">Data Management System</a></li>
         <li><a href="#tab2">Implementation-specific</a></li>
