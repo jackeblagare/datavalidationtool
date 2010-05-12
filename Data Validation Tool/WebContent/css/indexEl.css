@@ -61,3 +61,9 @@ a.button:active span {
     background-position: bottom left;
     padding: 6px 0 4px 18px; /* push text down 1px */
 } 
+
+#advanced{
+	position: absolute;
+	left: 1000px;
+	top: 550px;
+}

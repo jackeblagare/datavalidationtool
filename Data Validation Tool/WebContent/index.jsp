@@ -83,10 +83,10 @@ $(document).ready(function() {
         	<input type="checkbox" name="ISnameS"/> Name sharing (ACCNO,ITEST,GACC,RELNM) <br/>
         	<input type="checkbox" name="ISnameTGACC"/> Name type GACC (Genebank accession) <br/>
         	<input type="checkbox" name="ISnameI"/> Name inheritance from GPID2 (NSTAT,NDATE,NLOCN)<br/>
-        	<input type="checkbox" name="ISnameFmt"/> <input type="text" size="5" name="nameFmt"/> name format <br/>
+        	<input type="checkbox" name="ISnameFmt"/> <input type="text" size="5" name="nameFmt" value="IRGC"/> name format <br/>
         	<input type="checkbox" name="ISprefN"/> Preferred name eligibility (name types) <br/>
         	<input type="checkbox" name="ISprefID"/> Preferred ID eligibility (name types) <br/>
-        	<input type="checkbox" name="ISglocn"/> Creation location (GLOCN) of germplasms imported by: <input type="text" name="locnName" size="7"/> <br/>   
+        	<input type="checkbox" name="ISglocn"/> Creation location (GLOCN) of germplasms imported by: <input type="text" name="locnName" size="7" value="IRRI"/> <br/>   
         </div>
        <div id="tab3" class="tab_content">
         	<fieldset>
@@ -192,11 +192,13 @@ $(document).ready(function() {
  	<div id="opButtons2">  
     	<input class="button" type="reset" value="RESET"/>
    		<input class="button" type="submit" value="RUN"/>
-    
     </div>
     </form>
-    
-    
 </div>
+
+<div id="advanced">
+	<a class="button" id="advancedQry" href="#"><span>Advanced Query</span></a>
+</div>
+
 </body>
 </html>
