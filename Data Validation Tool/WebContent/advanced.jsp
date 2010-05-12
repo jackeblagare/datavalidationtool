@@ -33,8 +33,9 @@
 				</tr>
 			</table>
 			
-			<textarea rows="10" cols="50" name="sql"></textarea>
-			<textarea rows="10" cols="50" name="results"></textarea>
+			<textarea rows="10" cols="50" id="sql" name="sql"></textarea><br/>
+			<p></p><br/>
+			<textarea rows="5" cols="100" id="sql" name="results"></textarea>
 		</form>
 	</div>
 </body>
