@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Queries {
 
-	public String[] queryList = new String[50];
+	public String[] queryList = new String[55];
 	public int list = 0;
 	
 	public void mapQuery(String queryID) 
@@ -53,11 +53,12 @@ public class Queries {
 			queryList[list] = "SELECT g.gid,n.ntype,COUNT(*) as number_of_names_with_same_ntype FROM (germplsm as g INNER JOIN names as n ON g.gid = n.gid)WHERE g.grplce = 0 and n.nstat <> 9 AND n.ntype IN (1,2,3,9,11,21,1019)GROUP BY g.gid, n.ntype HAVING COUNT(n.nid) > 1";
 			list++;
 			//DataError-0028: Germplasm with both CRSNM and LNAME name types
-			queryList[list] = "select n1.gid,n1.nid as nid1,n1.ntype as ntype1,n1.nval as nval1,n1.nuid as nuid1,n2.nid as nid2,n2.ntype as ntype2,n2.nval as nval2,n2.nuid as nuid2 from (names as n1 INNER JOIN names as n2 on n1.gid = n2.gid),germplsm as g where n1.ntype = 2 and n1.nstat <> 9 and n2.ntype = 13 and n2.nstat <> 9 and n1.gid = g.gid and g.grplce = 0";
+			queryList[list] = "SELECT n1.gid,n1.nid as nid1,n1.ntype as ntype1,n1.nval as nval1,n1.nuid as nuid1,n2.nid as nid2,n2.ntype as ntype2,n2.nval as nval2,n2.nuid as nuid2 from (names as n1 INNER JOIN names as n2 on n1.gid = n2.gid),germplsm as g where n1.ntype = 2 and n1.nstat <> 9 and n2.ntype = 13 and n2.nstat <> 9 and n1.gid = g.gid and g.grplce = 0";
 			list++;
 			//DataError-0029: Germplasm with both RELNM and COLNO name types
-			queryList[list] = "select n1.gid,n1.nid as nid1,n1.ntype as ntype1,n1.nval as nval1,n1.nuid as nuid,n2.nid as nid2,n2.ntype as ntype2,n2.nval as nval2,n2.nuid as nuid2 from (names as n1 INNER JOIN names as n2 on n1.gid = n2.gid),germplsm as g where n1.ntype = 9 and n1.nstat <> 9 and n2.ntype = 4 and n2.nstat <> 9 and n1.gid = g.gid and g.grplce = 0";
+			queryList[list] = "SELECT n1.gid,n1.nid as nid1,n1.ntype as ntype1,n1.nval as nval1,n1.nuid as nuid,n2.nid as nid2,n2.ntype as ntype2,n2.nval as nval2,n2.nuid as nuid2 from (names as n1 INNER JOIN names as n2 on n1.gid = n2.gid),germplsm as g where n1.ntype = 9 and n1.nstat <> 9 and n2.ntype = 4 and n2.nstat <> 9 and n1.gid = g.gid and g.grplce = 0";
 			list++;
+			
 		}
 		
 		else if (queryID.equals(Ids[7])) //Name sharing (ACCNO,ITEST,GACC,RELNM)
@@ -98,13 +99,13 @@ public class Queries {
 		else if (queryID.equals(Ids[9])) //Name inheritance from GPID2 (NSTAT,NDATE,NLOCN)
 		{
 			//DataError-0014: MAN germplasm with inherited name from GPID2 but NSTAT not inherited
-			queryList[list] = "select n.nid,n.gid,n.nval,n.nstat,g.gpid2 as gpid2_gid,n2.nstat as gpid2_nstat,u.uname as icis_user from names AS n INNER JOIN germplsm g on n.gid = g.gid,names as n2,methods as m,users as u where g.methn = m.mid and m.mtype = 'MAN' and n2.nval = n.nval and g.grplce = 0 and n2.gid = g.gpid2 and n2.nstat <> n.nstat and n2.nstat = 1 and n.nstat <> 9 and g.germuid = u.userid ";
+			queryList[list] = "SELECT n.nid,n.gid,n.nval,n.nstat,g.gpid2 as gpid2_gid,n2.nstat as gpid2_nstat,u.uname as icis_user from names AS n INNER JOIN germplsm g on n.gid = g.gid,names as n2,methods as m,users as u where g.methn = m.mid and m.mtype = 'MAN' and n2.nval = n.nval and g.grplce = 0 and n2.gid = g.gpid2 and n2.nstat <> n.nstat and n2.nstat = 1 and n.nstat <> 9 and g.germuid = u.userid ";
 			list++;
 			//DataError-0015: Germplasm with inherited name from GPID2 but NDATE not inherited
-			queryList[list] = "select n.nid,n.gid,n.nval,n.ndate,g.gpid2 as gpid2_gid,n2.ndate as gpid2_ndate,u.uname as icis_user from names AS n INNER JOIN germplsm g on n.gid = g.gid,names as n2,users as u where n2.nval = n.nval and g.grplce = 0 and n2.gid = g.gpid2 and n2.ndate <> n.ndate and n2.ndate <> 0 and n.nstat <> 9 AND g.germuid = u.userid";
+			queryList[list] = "SELECT n.nid,n.gid,n.nval,n.ndate,g.gpid2 as gpid2_gid,n2.ndate as gpid2_ndate,u.uname as icis_user from names AS n INNER JOIN germplsm g on n.gid = g.gid,names as n2,users as u where n2.nval = n.nval and g.grplce = 0 and n2.gid = g.gpid2 and n2.ndate <> n.ndate and n2.ndate <> 0 and n.nstat <> 9 AND g.germuid = u.userid";
 			list++;
 			//DataError-0016: Germplasm with inherited name from GPID2 but NLOCN not inherited
-			queryList[list] = "select n.nid,n.gid,n.nval,n.nlocn,g.gpid2 as gpid2_gid,n2.nlocn as gpid2_nlocn,u.uname as icis_user from names AS n INNER JOIN germplsm g on n.gid = g.gid,names as n2,methods as m,users as u where g.methn = m.mid and m.mtype = 'MAN' and n2.nval = n.nval and g.grplce = 0 and n2.gid = g.gpid2 and n2.nlocn <> n.nlocn and n.nstat <> 9 and g.germuid = u.userid";
+			queryList[list] = "SELECT n.nid,n.gid,n.nval,n.nlocn,g.gpid2 as gpid2_gid,n2.nlocn as gpid2_nlocn,u.uname as icis_user from names AS n INNER JOIN germplsm g on n.gid = g.gid,names as n2,methods as m,users as u where g.methn = m.mid and m.mtype = 'MAN' and n2.nval = n.nval and g.grplce = 0 and n2.gid = g.gpid2 and n2.nlocn <> n.nlocn and n.nstat <> 9 and g.germuid = u.userid";
 			list++;
 		}
 		
@@ -126,7 +127,7 @@ public class Queries {
 			queryList[list] = "SELECT n.gid,n.nstat,n.ntype,n.nval,u.uname as icis_user FROM (names as n INNER JOIN germplsm as g on n.nid = g.gid),(SELECT gid from names group by gid having count(nid) > 1) as x,users as u WHERE n.nstat = 8 and g.grplce = 0 and n.ntype NOT IN (1,21,11,1019,5,9)and n.gid = x.gid and n.nuid = u.userid";
 			list++;
 			//DataError-0022: Germplasm with preferred ID not unique for the given name type
-			queryList[list] = "select n1.gid,n1.nid,n1.nstat,n1.nval,n2.gid as gid_2,n2.nid as gid2_nid,n2.nstat as gid2_nstat,n2.nval as gid2_nval from names as n1,names as n2 where n1.gid <> n2.gid and (n1.nstat = 8 or n2.nstat = 8)and n1.nstat <> 9 and n2.nstat <> 9 and n1.nval = n2.nval and n1.ntype = n2.ntype";
+			queryList[list] = "SELECT n1.gid,n1.nid,n1.nstat,n1.nval,n2.gid as gid_2,n2.nid as gid2_nid,n2.nstat as gid2_nstat,n2.nval as gid2_nval from names as n1,names as n2 where n1.gid <> n2.gid and (n1.nstat = 8 or n2.nstat = 8)and n1.nstat <> 9 and n2.nstat <> 9 and n1.nval = n2.nval and n1.ntype = n2.ntype";
 			list++;
 		}
 		
@@ -203,36 +204,36 @@ public class Queries {
 		else if (queryID.equals(Ids[19])) //Replaced parent references
 		{
 			//DataError-0015A: Germplasm with replaced parent references (GPID1)
-			queryList[list] = "select g.gid as gid,g.gpid1 as original_gpid1,p1.grplce as change_gpid1_to,u.uname as icis_user from germplsm as g INNER JOIN germplsm as p1 on g.gpid1 = p1.gid,users as u where g.grplce = 0 and p1.grplce <> 0 and p1.grplce <> p1.gid and g.germuid = u.userid ";
+			queryList[list] = "SELECT g.gid as gid,g.gpid1 as original_gpid1,p1.grplce as change_gpid1_to,u.uname as icis_user from germplsm as g INNER JOIN germplsm as p1 on g.gpid1 = p1.gid,users as u where g.grplce = 0 and p1.grplce <> 0 and p1.grplce <> p1.gid and g.germuid = u.userid ";
 			list++;
 			//DataError-0015B: Germplasm with replaced parent references (GPID2)
-			queryList[list] = "select g.gid as gid,g.gpid2 as original_gpid2,p2.grplce as change_gpid2_to,u.uname as icis_user FROM germplsm as g INNER JOIN germplsm as p2 on g.gpid2 = p2.gid, users as u WHERE g.grplce = 0 and p2.grplce <> 0 and p2.grplce <> p2.gid and g.germuid = u.userid ";
+			queryList[list] = "SELECT g.gid as gid,g.gpid2 as original_gpid2,p2.grplce as change_gpid2_to,u.uname as icis_user FROM germplsm as g INNER JOIN germplsm as p2 on g.gpid2 = p2.gid, users as u WHERE g.grplce = 0 and p2.grplce <> 0 and p2.grplce <> p2.gid and g.germuid = u.userid ";
 			list++;
 			//DataError-0015C: Germplasm with replaced parent references (MGID)
-			queryList[list] = "select g.gid as gid,g.mgid as original_mgid,m.grplce as change_mgid_to,u.uname as icis_user from germplsm as g inner join germplsm as m on g.mgid = m.gid,users as u where g.grplce = 0 and m.grplce <> 0 and m.grplce <> m.gid and g.germuid = u.userid ";
+			queryList[list] = "SELECT g.gid as gid,g.mgid as original_mgid,m.grplce as change_mgid_to,u.uname as icis_user from germplsm as g inner join germplsm as m on g.mgid = m.gid,users as u where g.grplce = 0 and m.grplce <> 0 and m.grplce <> m.gid and g.germuid = u.userid ";
 			list++;
 		}
 		
 		else if (queryID.equals(Ids[20])) //No names
 		{
 			//DataError-0008: Germplasm with no NAMES records 
-			queryList[list] = "select a.gid as germplsm_gid,a.methn as germplsm_method,a.glocn as germplsm_location,u.uname as icis_user from germplsm as a,users as u where a.grplce = 0 and a.germuid = u.userid and not exists (select * from names n where n.gid = a.gid) ";
+			queryList[list] = "SELECT a.gid as germplsm_gid,a.methn as germplsm_method,a.glocn as germplsm_location,u.uname as icis_user from germplsm as a,users as u where a.grplce = 0 and a.germuid = u.userid and not exists (select * from names n where n.gid = a.gid) ";
 			list++;
 		}
 		
 		else if (queryID.equals(Ids[21])) //Duplicate names
 		{
 			//DataError-0032: Germplasm with duplicate names 
-			queryList[list] = "Select a.gid,a.nval,a.ntype,a.nid,u.uname as icis_user from names a, users as u where exists ( select * from names b where a.gid = b.gid and a.ntype=b.ntype and a.nval = b.nval and a.nuid <> b.nuid and a.nstat <> 9 and b.nstat <> 9) and a.nuid = u.userid order by g.gid, a.nval, u.uname";
+			queryList[list] = "SELECT a.gid,a.nval,a.ntype,a.nid,u.uname as icis_user from names a, users as u where exists ( select * from names b where a.gid = b.gid and a.ntype=b.ntype and a.nval = b.nval and a.nuid <> b.nuid and a.nstat <> 9 and b.nstat <> 9) and a.nuid = u.userid order by g.gid, a.nval, u.uname";
 			list++;
-			queryList[list] = "Select a.gid,a.nval,a.ntype,a.nid,u.uname as icis_user from names a, users as u where exists( select * from names b where a.gid = b.gid and a.ntype=b.ntype and a.nval = b.nval and a.nuid = b.nuid and a.nid <> b.nid and a.nstat <> 9 and b.nstat <> 9) and a.nuid = u.userid order by a.gid, a.nval, u.uname";
+			queryList[list] = "SELECT a.gid,a.nval,a.ntype,a.nid,u.uname as icis_user from names a, users as u where exists( select * from names b where a.gid = b.gid and a.ntype=b.ntype and a.nval = b.nval and a.nuid = b.nuid and a.nid <> b.nid and a.nstat <> 9 and b.nstat <> 9) and a.nuid = u.userid order by a.gid, a.nval, u.uname";
 			list++;
 		}
 		
 		else if (queryID.equals(Ids[22])) //Possible duplicate names
 		{
 			//DataError-0010: Germplasm with possible duplicate names (NTYPE-NSTAT combination occurring more than once)
-			queryList[list] = "Select a.gid,a.ntype,a.nstat,a.nval,a.nid,u.uname as icis_user from names a, users as u where exists( select * from names b where a.gid = b.gid and a.ntype = b.ntype and a.nstat = b.nstat and a.nval <> b.nval and a.nstat <> 9 and b.nstat <> 9)and a.nuid = u.userid order by a.gid,a.nval";
+			queryList[list] = "SELECT a.gid,a.ntype,a.nstat,a.nval,a.nid,u.uname as icis_user from names a, users as u where exists( select * from names b where a.gid = b.gid and a.ntype = b.ntype and a.nstat = b.nstat and a.nval <> b.nval and a.nstat <> 9 and b.nstat <> 9)and a.nuid = u.userid order by a.gid,a.nval";
 			list++;
 		}
 		
@@ -252,20 +253,20 @@ public class Queries {
 		else if (queryID.equals(Ids[24])) //Count preferred IDs 
 		{
 			//DataError-0011: Germplasm with no preferred ID (NSTAT=8) and no existing preferred English name
-			queryList[list] = "select a.gid as gid,u.uname as icis_user from germplsm a, users u where not exists (select * from names b where a.gid = b.gid and b.nstat = 8)and not exists (select * from names c where a.gid = c.gid and c.nstat = 1)and a.germuid = u.userid";
+			queryList[list] = "SELECT a.gid as gid,u.uname as icis_user from germplsm a, users u where not exists (select * from names b where a.gid = b.gid and b.nstat = 8)and not exists (select * from names c where a.gid = c.gid and c.nstat = 1)and a.germuid = u.userid";
 			list++;
 			//DataError-0020: Germplasm with multiple preferred IDs (NSTAT=8)
-			queryList[list] = "select distinct a.gid as gid,u.uname as icis_user from names a, users u where exists(select * from names b where a.gid = b.gid and a.nstat=b.nstat and a.nstat = 8 and a.nid<>b.nid and a.nstat<>9 and b.nstat<>9)and a.nuid = u.userid order by a.gid";
+			queryList[list] = "SELECT distinct a.gid as gid,u.uname as icis_user from names a, users u where exists(select * from names b where a.gid = b.gid and a.nstat=b.nstat and a.nstat = 8 and a.nid<>b.nid and a.nstat<>9 and b.nstat<>9)and a.nuid = u.userid order by a.gid";
 			list++;
 		}
 		
 		else if (queryID.equals(Ids[25])) //Count preferred names 
 		{
 			//DataError-0017: Germplasm with multiple preferred English names (NSTAT=1)
-			queryList[list] = "select distinct a.gid as gid,u.uname as icis_user from names a, users u where exists(select * from names b where a.gid = b.gid and a.nstat=b.nstat and a.nstat = 1 and a.nid<>b.nid and a.nstat<>9 and b.nstat<>9)and a.nuid = u.userid order by a.gid";
+			queryList[list] = "SELECT distinct a.gid as gid,u.uname as icis_user from names a, users u where exists(select * from names b where a.gid = b.gid and a.nstat=b.nstat and a.nstat = 1 and a.nid<>b.nid and a.nstat<>9 and b.nstat<>9)and a.nuid = u.userid order by a.gid";
 			list++;
 			//DataError-0018: Germplasm with no preferred English name (NSTAT=1) and no existing preferred ID
-			queryList[list] = "select a.gid as gid,u.uname as icis_user from germplsm a, users u where not exists (select * from names b where a.gid = b.gid and b.nstat = 1)and not exists (select * from names c where a.gid = c.gid and c.nstat = 8)and a.germuid = u.userid";
+			queryList[list] = "SELECT a.gid as gid,u.uname as icis_user from germplsm a, users u where not exists (select * from names b where a.gid = b.gid and b.nstat = 1)and not exists (select * from names c where a.gid = c.gid and c.nstat = 8)and a.germuid = u.userid";
 			list++;
 		}
 		
@@ -285,7 +286,7 @@ public class Queries {
 		else if (queryID.equals(Ids[27])) //GDATE of progenitors
 		{
 			//DataError-0012: Germplasm with germplasm creation date (GDATE) earlier than GDATE of parent (GPID1, GPID2 or both)
-			queryList[list] = "select c1.gid,c1.gdate,p1.gid as gpid1,p1.gdate as gpid1_gdate,p2.gid as gpid2,p2.gdate as gpid2_gdate,u.uname as icis_user from (germplsm as c1 inner join germplsm as p1 on c1.gpid1 = p1.gid),(germplsm as c2 inner join germplsm as p2 on c2.gpid2 = p2.gid),users as u where c1.grplce = 0 and c1.gid = c2.gid and c1.grplce = 0 and c1.gdate <> 0 and c2.gdate <> 0 and c1.germuid = u.userid and ( (p1.gdate > c1.gdate and mid(cstr(p1.gdate),1,) <> mid(cstr(c1.gdate),1,)) or (p2.gdate > c2.gdate and mid(cstr(p2.gdate),1,) <> mid(cstr(c2.gdate),1,)))";
+			queryList[list] = "SELECT c1.gid,c1.gdate,p1.gid as gpid1,p1.gdate as gpid1_gdate,p2.gid as gpid2,p2.gdate as gpid2_gdate,u.uname as icis_user from (germplsm as c1 inner join germplsm as p1 on c1.gpid1 = p1.gid),(germplsm as c2 inner join germplsm as p2 on c2.gpid2 = p2.gid),users as u where c1.grplce = 0 and c1.gid = c2.gid and c1.grplce = 0 and c1.gdate <> 0 and c2.gdate <> 0 and c1.germuid = u.userid and ( (p1.gdate > c1.gdate and mid(cstr(p1.gdate),1,) <> mid(cstr(c1.gdate),1,)) or (p2.gdate > c2.gdate and mid(cstr(p2.gdate),1,) <> mid(cstr(c2.gdate),1,)))";
 			list++;
 			//DataError-0013: Germplasm with germplasm creation date (GDATE) earlier than GDATE of MGID
 			queryList[list] = "SELECT c.gid,c.gdate,mt.mtype,mg.gid as mgid,mg.gdate as mgid_gdate,u.uname as icis_user FROM germplsm AS c INNER JOIN germplsm AS mg ON c.mgid = mg.gid,methods as mt,users as u where c.grplce = 0 and c.methn = mt.mid and mt.mtype = 'MAN' and c.gdate <> 0 and mg.gdate > c.gdate and c.germuid = u.userid and mid(cstr(mg.gdate),1,) <> mid(cstr(c.gdate),1,)";
