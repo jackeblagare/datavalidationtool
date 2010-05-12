@@ -130,8 +130,9 @@ $(document).ready(function() {
        			</fieldset>
        			<fieldset>
        				<legend><b>GMS</b></legend>
-       				<button id="gmsSelectAll">Select All</button>
-       				<button id="gmsDSelectAll">Deselect All</button>
+       				<a class="button" id="gmsSelectAll" href="#"><span>Select All</span></a> 
+       				<a class="button" id="gmsDSelectAll" href="#"><span>Deselect All</span></a> 
+
        				<br/>
        				<input type="checkbox" name="GMSAttr"/> ATRIBUTS <br/>
         			<input type="checkbox" name="GMSbib"/> BIBREFS <br/>
@@ -152,8 +153,8 @@ $(document).ready(function() {
        			</fieldset>
        			<fieldset>
        				<legend><b>DMS</b></legend>
-       				<button id="dmsSelectAll">Select All</button>
-       				<button id="dmsDSelectAll">Deselect All</button>
+       				<a class="button" id="dmsSelectAll" href="#"><span>Select All</span></a> 
+       				<a class="button" id="dmsDSelectAll" href="#"><span>Deselect All</span></a>
        				<br/>
        				<input type="checkbox" name="DMSfactor"/> FACTOR <br/>
         			<input type="checkbox" name="DMSvariate"/> VARIATE <br/>
