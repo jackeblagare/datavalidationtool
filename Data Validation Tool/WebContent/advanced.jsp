@@ -34,13 +34,24 @@
 					<td><input type="text" name="dbase"/></td>
 				</tr>
 			</table>
-			
+			<div id="queryIc">
+				<img src="images/query.png" height="30"/>
+			</div>
+			<h3 id="sqltxt">SQL Query</h3>
 			<textarea rows="7" cols="50" id="sql" name="sql"></textarea><br/>
 			<p></p><br/>
+			<div id="opButtons">
+				<input type="submit" value="Run"/>
+				<input type="reset" value="Reset"/>
+			</div>
+			
 		</form>
 		<!-- RENDER RESULTS -->
-		
-		<textarea rows="5" cols="80" id="results" name="results"></textarea>
+		<div id="resultsIc">
+				<img src="images/results.png" height="30"/>
+		</div>
+		<h3 id="restxt">Results</h3>
+		<textarea rows="5" cols="84" id="results" name="results"></textarea>
 	
 	</div>
 </body>
