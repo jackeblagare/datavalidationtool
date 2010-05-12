@@ -27,7 +27,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-
+	//all queries
 	 $("#selectAllQ").click(function(){
 		this.blur();
 	    $("#tab1>input:checkbox").each(function(){
@@ -52,7 +52,41 @@ $(document).ready(function() {
 		    $("#tab3>*>input:checkbox").each(function(){
                 this.checked = false;
     		});
+	});
+
+	//queries in Database foreign key references table
+	 $("#gmsSelectAll").click(function(){
+			this.blur();
+		    $("#gmsField>input:checkbox").each(function(){
+		                this.checked = true;
+		    });
+		   
 		 });
+
+		 $("#gmsDSelectAll").click(function(){
+			 	this.blur();
+			    $("#gmsField>input:checkbox").each(function(){
+			        this.checked = false;
+			    });
+			    
+		});
+
+		 $("#dmsSelectAll").click(function(){
+				this.blur();
+			    $("#dmsField>input:checkbox").each(function(){
+			                this.checked = true;
+			    });
+			   
+			 });
+
+			 $("#dmsDSelectAll").click(function(){
+				 	this.blur();
+				    $("#dmsField>input:checkbox").each(function(){
+				        this.checked = false;
+				    });
+				    
+			});	
+	
 });
 </script>
 </head>
@@ -128,12 +162,11 @@ $(document).ready(function() {
        				<input type="radio" name="GMSopts" value="1"/>Include zero values
        				<input type="radio" name="GMSopts" value="2"/>Exclude zero values"
        			</fieldset>
-       			<fieldset>
+       			<fieldset id="gmsField">
        				<legend><b>GMS</b></legend>
        				<a class="button" id="gmsSelectAll" href="#"><span>Select All</span></a> 
        				<a class="button" id="gmsDSelectAll" href="#"><span>Deselect All</span></a> 
-
-       				<br/>
+       				<br/><br/>
        				<input type="checkbox" name="GMSAttr"/> ATRIBUTS <br/>
         			<input type="checkbox" name="GMSbib"/> BIBREFS <br/>
         			<input type="checkbox" name="GMSchng"/> CHANGES <br/>
@@ -151,11 +184,11 @@ $(document).ready(function() {
         			<input type="checkbox" name="GMSusrs"/> USERS <br/>
         		
        			</fieldset>
-       			<fieldset>
+       			<fieldset id="dmsField">
        				<legend><b>DMS</b></legend>
        				<a class="button" id="dmsSelectAll" href="#"><span>Select All</span></a> 
        				<a class="button" id="dmsDSelectAll" href="#"><span>Deselect All</span></a>
-       				<br/>
+       				<br/><br/>
        				<input type="checkbox" name="DMSfactor"/> FACTOR <br/>
         			<input type="checkbox" name="DMSvariate"/> VARIATE <br/>
         			
