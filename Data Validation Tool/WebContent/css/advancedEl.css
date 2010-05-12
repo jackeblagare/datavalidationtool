@@ -13,6 +13,36 @@
 
 #results{
 	position: absolute;
-	left:15%;
+	left:20%;
 	top:50%;
+}
+
+#opButtons{
+	position: absolute;
+	left: 80%; 
+	top:  30%	
+}
+
+#queryIc{
+	position: absolute;
+	left:40%;
+	top:9%;
+}
+
+#resultsIc{
+	position: absolute;
+	left:20%;
+	top:44%;
+}
+
+#sqltxt{
+	position: absolute;
+	left:42.5%;
+	top:9%;
+}
+
+#restxt{
+	position: absolute;
+	left: 22.5%;
+	top:44%;
 }
