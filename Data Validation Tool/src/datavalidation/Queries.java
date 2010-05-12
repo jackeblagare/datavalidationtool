@@ -1,11 +1,33 @@
 package datavalidation;
 
 import java.util.*;
+import java.sql.*;
 
 public class Queries {
 
 	public String[] queryList = new String[55];
+	public ArrayList<ResultSet> errorsList = new ArrayList<ResultSet>();
 	public int list = 0;
+	public ResultSet rs;
+	public Connection con;
+    public Statement st;
+    
+	public void executeQuery(String url,String query,String user,String pwd){
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			st= con.createStatement();
+			for(int i = 0;i < list;i++){
+				rs=st.executeQuery(queryList[i]);
+				errorsList.add(rs);
+			}
+			
+	    	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+	}
 	
 	public void mapQuery(String queryID) 
 	{

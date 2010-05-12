@@ -6,11 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Advanced Query</title>
+<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="css/advancedEl.css"/>
 </head>
 <body>
 	<div id="container">
 		<form method="post">
-			<table>
+			<table id="connection">
 				<tr>
 					<td>Host:</td>
 					<td><input type="text" name="host"/></td>
@@ -33,10 +35,13 @@
 				</tr>
 			</table>
 			
-			<textarea rows="10" cols="50" id="sql" name="sql"></textarea><br/>
+			<textarea rows="7" cols="50" id="sql" name="sql"></textarea><br/>
 			<p></p><br/>
-			<textarea rows="5" cols="100" id="sql" name="results"></textarea>
 		</form>
+		<!-- RENDER RESULTS -->
+		
+		<textarea rows="5" cols="80" id="results" name="results"></textarea>
+	
 	</div>
 </body>
 </html>
