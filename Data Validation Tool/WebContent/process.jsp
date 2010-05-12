@@ -181,8 +181,10 @@
 	if(request.getParameter("GMSsndivs") != null){
 		query.mapQuery("GMSsndivs");
 	}
+	
 	if(request.getParameter("GMSusrs") != null){
 		query.mapQuery("GMSusrs");
 	}
 	
+	out.print(query.getQueryList()[0]);
 %>
