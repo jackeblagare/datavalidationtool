@@ -197,7 +197,7 @@ $(document).ready(function() {
 </div>
 
 <div id="advanced">
-	<a class="button" id="advancedQry" href="#"><span>Advanced Query</span></a>
+	<a class="button" id="advancedQry" href="advanced.jsp"><span>Advanced Query</span></a>
 </div>
 
 </body>
