@@ -4,185 +4,185 @@
 <%@ page import = "datavalidation.*" %>
     
 <%
-	
+	Queries query = new Queries();	
 
 	if(request.getParameter("DMSgid") != null){
-			
+		query.mapQuery("DMSgid");	
 	}
 	
 	if(request.getParameter("DMSoindex") != null){
-		// java method that adds query to queue
+		query.mapQuery("DMSoindex");
 	}
 	
 	if(request.getParameter("DMStraitS") != null){
-		// java method that adds query to queue
+		query.mapQuery("DMStraitS");
 	}
 	
 	if(request.getParameter("DMSduplData") != null){
-		// java method that adds query to queue
+		query.mapQuery("DMSduplData");
 	}
 
 	if(request.getParameter("DMSduplLevel") != null){
-		// java method that adds query to queue
+		query.mapQuery("DMSduplLevel");
 	}
 	
 	if(request.getParameter("DMSlevel") != null){
-		// java method that adds query to queue
+		query.mapQuery("DMSlevel");
 	}
 	
 	if(request.getParameter("ISnameT") != null){
-		// java method that adds query to queue
+		query.mapQuery("ISnameT");
 	}
 	
 	if(request.getParameter("ISnameS") != null){
-		// java method that adds query to queue
+		query.mapQuery("ISnameS");
 	}
 	
 	if(request.getParameter("ISnameTGACC") != null){
-		// java method that adds query to queue
+		query.mapQuery("ISnameTGACC");
 	}
 	
 	if(request.getParameter("ISnameI") != null){
-		// java method that adds query to queue
+		query.mapQuery("ISnameI");
 	}
 	
 	if(request.getParameter("ISnameFmt") != null){
-		// java method that adds query to queue
+		query.mapQuery("ISnameFmt");
 	}
 	
 	if(request.getParameter("ISprefN") != null){
-		// java method that adds query to queue
+		query.mapQuery("ISprefN");
 	}
 	
 	if(request.getParameter("ISprefID") != null){
-		// java method that adds query to queue
+		query.mapQuery("ISprefID");
 	}
 	
 	if(request.getParameter("ISglocn") != null){
-		// java method that adds query to queue
+		query.mapQuery("ISglocn");
 	}
 	
 	if(request.getParameter("GMSinP") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSinP");
 	}
 	
 	if(request.getParameter("GMScircR") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMScircR");
 	}
 	
 	if(request.getParameter("GMSincGc") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSincGc");
 	}
 	
 	if(request.getParameter("GMSgloc") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSgloc");
 	}
 	
 	if(request.getParameter("GMSdelP") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSdelP");
 	}
 	
 	if(request.getParameter("GMSrepP") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSrepP");
 	}
 	
 	if(request.getParameter("GMSnon") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSnon");
 	}
 	
 	if(request.getParameter("GMSdupN") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSdupN");
 	}
 	
 	if(request.getParameter("GMSposDup") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSposDup");
 	}
 	
 	if(request.getParameter("GMSmethN") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSmethN");
 	}
 	
 	if(request.getParameter("GMSctP") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSctP");
 	}
 	
 	if(request.getParameter("GMSprN") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSprN");
 	}
 	
 	if(request.getParameter("GMSgdate") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSgdate");
 	}
 	
 	if(request.getParameter("GMSgdatePr") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSgdatePr");
 	}
 	
 	if(request.getParameter("GMSndate") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSndate");
 	}
 	
 	if(request.getParameter("GMSngdate") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSngdate");
 	}
 	
 	if(request.getParameter("GMSAttr") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSAttr");
 	}
 	
 	if(request.getParameter("GMSbib") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSbib");
 	}
 	
 	if(request.getParameter("GMSchng") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSchng");
 	}
 	
 	if(request.getParameter("GMSgeo") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSgeo");
 	}
 	
 	if(request.getParameter("GMSgpm") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSgpm");
 	}
 	
 	if(request.getParameter("GMSinstln") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSinstln");
 	}
 	
 	if(request.getParameter("GMSlistd") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSlistd");
 	}
 	
 	if(request.getParameter("GMSloc") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSloc");
 	}
 	
 	if(request.getParameter("GMSlistnms") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSlistnms");
 	}
 	
 	if(request.getParameter("GMSlocdes") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSlocdes");
 	}
 	
 	if(request.getParameter("GMSmeth") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSmeth");
 	}
 	
 	if(request.getParameter("GMSnames") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSnames");
 	}
 	
 	if(request.getParameter("GMSprog") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSprog");
 	}
 	
 	if(request.getParameter("GMSsndivs") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSsndivs");
 	}
 	if(request.getParameter("GMSusrs") != null){
-		// java method that adds query to queue
+		query.mapQuery("GMSusrs");
 	}
 	
 %>
