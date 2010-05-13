@@ -1,48 +1,30 @@
 @CHARSET "ISO-8859-1";
 #connection{
-	position: absolute;
-	left: 20%;
-	top:15%;
+	position:absolute;
+	top: 90px;
+	left: 160px;
 }
 
 #sql{
 	position: absolute;
-	left: 40%;
-	top: 15%;
-}
-
-#results{
-	position: absolute;
-	left:20%;
-	top:50%;
-}
-
-#opButtons{
-	position: absolute;
-	left: 80%; 
-	top:  30%	
+	top:88px;
+	left:395px;
 }
 
 #queryIc{
 	position: absolute;
-	left:40%;
-	top:9%;
-}
-
-#resultsIc{
-	position: absolute;
-	left:20%;
-	top:44%;
+	top: 60px;
+	left:394px;
 }
 
 #sqltxt{
 	position: absolute;
-	left:42.5%;
-	top:9%;
+	top: 60px;
+	left: 430px;
 }
 
-#restxt{
+#results{
 	position: absolute;
-	left: 22.5%;
-	top:44%;
-}
+	top: 280px;
+	left: 160px;
+}	
