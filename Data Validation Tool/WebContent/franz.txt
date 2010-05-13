@@ -97,3 +97,74 @@
     <?php echo anchor('PostNotificationsController/','Return');?>
 </body>
 </html>
+
+==============================================================================================
+<?php
+
+class PostNotificationsController extends Controller{
+
+    function PostNotificationsController(){
+		parent::Controller();
+		$this->load->helper('url');
+		$this->load->helper('form');
+        $this->load->model('Notifications_model', '', TRUE);
+        session_start();	 
+	}
+    
+    function index(){
+        $this->load->view('notifications/messagecenter_view');
+    }
+    
+    function requestInbox(){
+        $data['messgs'] = $this->Notifications_model->retrieveNotices($_SESSION['user']);
+        $result = $this->load->view('notifications/inbox_view',$data,true);
+        echo $result;
+        
+    }
+    function getMsg(){
+        $id = $_POST['id'];
+        $this->db->select('*');
+        $this->db->from('notifications');
+        $this->db->where('id',$id);
+        $query = $this->db->get();
+        
+        //echo $query;
+        $arr = $query->_fetch_assoc();
+        
+        echo "<h2>".$arr['subject']."</h2>";
+        echo "<p>From: ".$arr['sender']."</p>";
+        echo "<p>To: ".$arr['receiver']."</p>";
+        echo "<p>".$arr['message']."</p>";
+    }
+    
+    function requestTrash(){
+        
+    }
+    
+    function requestCompose(){
+        $this->load->view('notifications/compose_view');
+    }
+    
+    function sendMail(){
+        $to = $_POST['username'];
+        $from = $_SESSION['user'];
+        $subject = $_POST['subject'];
+        $msg = $_POST['msg'];
+        
+        $status = $this->Notifications_model->sendNotice($to,$from,$subject,$msg);
+        redirect('PostNotificationsController/');
+    }
+    
+    function check(){
+        $username = trim(strtolower($_POST['username']));
+        //$username = mysql_escape_string($username);
+
+        $this->db->select('username');
+        $this->db->from('user');
+        $this->db->where('username',$username);
+        $query = $this->db->get();
+        
+        echo $query->num_rows();
+    }
+}
+?>
