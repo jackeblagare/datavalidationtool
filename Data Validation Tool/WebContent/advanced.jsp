@@ -54,6 +54,6 @@
 		<textarea rows="5" cols="84" id="results" name="results"></textarea>
 	
 	</div>
-	<a class="button" href="index.jsp"><span>Back</span></a> 
+	<a class="button" href="index.jsp"><span>&lt;&lt;Back</span></a> 
 </body>
 </html>
