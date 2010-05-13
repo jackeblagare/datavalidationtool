@@ -10,7 +10,10 @@
 <link rel="stylesheet" href="css/advancedEl.css"/>
 </head>
 <body>
+	<a class="button" href="index.jsp"><span>&lt;&lt;Back</span></a> 
+	<br/><br/>
 	<div id="container">
+		<br/>
 		<form method="post" action="adv_process.jsp" >
 			<table id="connection">
 				<tr>
@@ -54,6 +57,6 @@
 		<textarea rows="5" cols="84" id="results" name="results"></textarea>
 	
 	</div>
-	<a class="button" href="index.jsp"><span>&lt;&lt;Back</span></a> 
+	
 </body>
 </html>
