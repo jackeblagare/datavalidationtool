@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="container">
-		<form method="post">
+		<form method="post" action="adv_process.jsp" >
 			<table id="connection">
 				<tr>
 					<td>Host:</td>
