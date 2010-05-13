@@ -1,0 +1,41 @@
+<script>
+        $(document).ready(function(){
+            $("#sub").attr("disabled", "disabled");
+            $('#username').keyup(username_check);
+    
+        });
+	
+        function username_check(){	
+            var username = $('#username').val();
+            if(username == ""){
+                $('#username'). css('border', '3px #CCC solid');
+                $('#tick').hide();
+            }
+            else{
+
+                jQuery.ajax({
+                    type: "POST",
+                    url: "check",
+                    data: 'username='+ username,
+                    cache: false,
+                    success: function(response){
+                        if(response <= 0){
+	                       $('#username').css('border', '3px #C33 solid');	
+	                       $('#tick').hide();
+	                       $('#cross').fadeIn();
+                           $("#sub").attr("disabled", "disabled");
+                        }
+                        else{
+	                       $('#username').css('border', '3px #090 solid');
+                           $('#cross').hide();
+                           $('#tick').fadeIn();
+                           $('#sub').removeAttr("disabled");
+                        }
+
+                     }
+                });
+            }
+
+        }
+
+    </script>
