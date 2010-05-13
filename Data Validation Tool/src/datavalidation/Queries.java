@@ -6,20 +6,28 @@ import java.sql.*;
 public class Queries {
 
 	public String[] queryList = new String[55];
-	public ArrayList<ResultSet> errorsList = new ArrayList<ResultSet>();
+	public int[] errorsList = new int[55];
 	public int list = 0;
 	public ResultSet rs;
 	public Connection con;
     public Statement st;
     
-	public void executeQuery(String url,String query,String user,String pwd){
+    public int[] getErrors(){
+    	return errorsList;
+    	
+    }
+    
+	public void callQueries(){
 		try {
-			con = DriverManager.getConnection(url,user,pwd);
+			con = DriverManager.getConnection("jdbc:mysql//localhost:3306/iris","root","");
 			st= con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs=st.executeQuery(queryList[i]);
-				errorsList.add(rs);
-			}
+				if(rs!=null){
+					errorsList[i] = 1; //select statement returns data
+				}
+				
+			} 
 			
 	    	
 		} catch (SQLException e) {
