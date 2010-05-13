@@ -1,4 +1,11 @@
-<script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Compose</title>
+    <script type="text/javascript" src="<?php echo base_url();?>/js/jquery.js"></script>
+    <script>
         $(document).ready(function(){
             $("#sub").attr("disabled", "disabled");
             $('#username').keyup(username_check);
@@ -39,3 +46,54 @@
         }
 
     </script>
+
+    <style>
+        #username,#subject,#msg{
+	       padding:3px;
+	       font-size:18px;
+	       border:3px #CCC solid;
+        }
+
+        #tick{display:none}
+        #cross{display:none}
+    </style>
+    
+</head>
+
+<body>
+    <?php echo form_open('PostNotificationsController/sendMail');?>
+        <h1>Send Message</h1>
+        <table id="mailBody">
+            <tr>
+                <td><p>To:</p></td>
+                <td>
+                  <input name="username" id="username" type="text" size="23"/>
+                  <img id="tick" src="<?php echo base_url();?>/img/tick.png" width="16" height="16"/>
+                  <img id="cross" src="<?php echo base_url();?>/img/cross.png" width="16" height="16"/>
+                </td>
+            </tr>
+            <tr>
+                <td><p>Subject:</p></td>
+                <td>
+                    
+                    <input name="subject" id="subject" type="text" size="23"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><textarea name="msg" id="msg" cols="19" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="sub" id="sub" value="Send"/>
+                    <input type="reset" value="Reset"/>
+                </td>
+                
+            </tr>
+        </table>
+    </form>
+    
+    <?php echo anchor('PostNotificationsController/','Return');?>
+</body>
+</html>
