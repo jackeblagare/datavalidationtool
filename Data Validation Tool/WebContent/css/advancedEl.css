@@ -25,6 +25,24 @@
 
 #results{
 	position: absolute;
-	top: 280px;
+	top: 300px;
 	left: 160px;
+}
+
+#resultsIc{
+	position: absolute;
+	top: 270px;
+	left:160px;	
+}
+
+#restxt{
+	position: absolute;
+	top: 272px;
+	left: 195px;	
+}
+
+#opButtons{
+	position: absolute;
+	top: 400px;
+	left: 230px;	
 }	
