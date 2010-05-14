@@ -187,6 +187,7 @@
 	}
 	
 	query.callQueries();
+	query.show();
 	
 	out.print("<br/>");
 	
