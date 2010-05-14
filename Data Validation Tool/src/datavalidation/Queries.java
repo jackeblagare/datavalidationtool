@@ -18,13 +18,18 @@ public class Queries {
     }
     
 	public void callQueries(){
+		boolean test;
 		try {
 			con = DriverManager.getConnection("jdbc:mysql//localhost:3306/iris","root","");
 			st= con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs=st.executeQuery(queryList[i]);
-				if(rs.next()){
+				if(test=rs.next()){
 					errorsList[i] = 1; //select statement returns data
+					System.out.println(test);
+				}
+				else{
+					errorsList[i] = 0;
 				}
 				
 			} 
