@@ -49,6 +49,7 @@ public class Queries {
 		
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iris","root","");
 			st = con.createStatement();
+			
 			for(int i = 0;i < list;i++){
 				rs = st.executeQuery(queryList[i]);
 				if(rs != null){
@@ -56,6 +57,7 @@ public class Queries {
 					err++;
 				}				
 			} 
+			rs.close();
 			st.close();
 			con.close();
 		} catch (SQLException e) {
