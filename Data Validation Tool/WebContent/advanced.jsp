@@ -33,11 +33,11 @@
 			<table id="connection">
 				<tr>
 					<td>Host:</td>
-					<td><input type="text" name="host"/></td>
+					<td><input type="text" name="host"/ value="localhost"></td>
 				</tr>
 				<tr>
 					<td>Username:</td>
-					<td><input type="text" name="username"/></td>
+					<td><input type="text" name="username" value="root"/></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
@@ -45,11 +45,11 @@
 				</tr>
 				<tr>
 					<td>Port:</td>
-					<td><input type="text" name="port"/></td>
+					<td><input type="text" name="port" value="3306"/></td>
 				</tr>
 				<tr>
 					<td>Database:</td>
-					<td><input type="text" name="dbase"/></td>
+					<td><input type="text" name="dbase" value="iris"/></td>
 				</tr>
 			</table>
 			<div id="queryIc">
