@@ -192,10 +192,8 @@
 	
 	
 	out.print("<br/>");
-	
-	for(int i=0;i<query.err;i++){
-		out.print("-------------");
-		out.print(query.errorsList[i]+"<br/><br/>");	
+	for(int i=0;i<query.list;i++){
+		out.print(query.errorMsg[i]+"<br/>");
 	}
 	
 	
