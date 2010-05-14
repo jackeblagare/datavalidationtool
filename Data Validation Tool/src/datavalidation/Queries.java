@@ -23,7 +23,7 @@ public class Queries {
 			st= con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs=st.executeQuery(queryList[i]);
-				if(rs!=null){
+				if(rs.next()){
 					errorsList[i] = 1; //select statement returns data
 				}
 				
