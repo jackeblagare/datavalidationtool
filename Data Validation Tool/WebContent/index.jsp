@@ -198,14 +198,16 @@ $(document).ready(function() {
        			
         </div>
     </div>
+    	
+    	<br />
    		<a class="button" id="advancedQry" href="advanced.jsp"><span>Advanced Query</span></a>
-    
-    	<a class="button" id="selectAllQ" href="#"><span>Select All Queries</span></a><br/><br/> 
+    	<a class="button" id="selectAllQ" href="#"><span>Select All Queries</span></a> 
     	<a class="button" id="deselectAllQ" href="#"><span>Deselect All Queries</span></a>
- 	 	  
+    	<br />
+ 	 	<hr />
+ 	 	<br />
     	<input class="button" type="reset" value="RESET"/>
    		<input class="button" type="submit" value="RUN"/>
-    
     </form>
 </div>
 
