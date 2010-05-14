@@ -10,15 +10,24 @@
 <link rel="stylesheet" href="css/advancedEl.css"/>
 <script src="js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-	$('#form').submit(function() {
-
+	$('#submitb').click(function(){
+		
+		var host= $("#host").val();
+		var username= $("#username").val();
+		var pwd= $("#pwd").val();
+		var port= $("#port").val();
+		var dbase= $("#dbase").val();
+		var sql= $("#sql").val();
+		
+		var datastring = 'host='+host+'&username='+ username+'&pwd='+pwd+'&port='+port+'&dbase='+dbase+'&sql='+sql;
 		 $.ajax({
-             type: "GET",
+             type: "POST",
              url: "adv_process.jsp",
-             data: 'host='+host+'&username='+ username+'&pwd='+pwd+'&port='+port+'&database='+dbase+'&sql='+sql,
+             data: datastring,
              cache: false,
              success: function(response){
 			 	$("#results").html("<h3>" + response + "</h3>").fadeIn("slow");
+				
              }
          });
 	});
@@ -29,27 +38,27 @@
 	<br/><br/>
 	<div id="container">
 		<br/>
-		<form id="form">
+		<form method="post" action="#">
 			<table id="connection">
 				<tr>
 					<td>Host:</td>
-					<td><input type="text" name="host"/ value="localhost"></td>
+					<td><input type="text" name="host" id="host" value="localhost"/></td>
 				</tr>
 				<tr>
 					<td>Username:</td>
-					<td><input type="text" name="username" value="root"/></td>
+					<td><input type="text" name="username" id="host" value="root"/></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type="password" name="pwd"/></td>
+					<td><input type="password" id="pwd" name="pwd"/></td>
 				</tr>
 				<tr>
 					<td>Port:</td>
-					<td><input type="text" name="port" value="3306"/></td>
+					<td><input type="text" name="port" id="port" value="3306"/></td>
 				</tr>
 				<tr>
 					<td>Database:</td>
-					<td><input type="text" name="dbase" value="iris"/></td>
+					<td><input type="text" name="dbase" id="dbase" value="iris"/></td>
 				</tr>
 			</table>
 			<div id="queryIc">
@@ -59,8 +68,8 @@
 			<textarea rows="7" cols="50" id="sql" name="sql"></textarea><br/>
 			<p></p><br/>
 			<div id="opButtons">
-				<input type="submit" value="Run"/>
-				<input type="reset" value="Reset"/>
+				<input type="submit" id="submitb" value="Run"/>
+				<input type="reset"  value="Reset"/>
 			</div>
 			
 		</form>
