@@ -41,7 +41,7 @@ public class Queries {
 		
 		try {	
 		
-			con = DriverManager.getConnection("jdbc:mysql://172.29.33.30:3306/iris","root","");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iris","root","");
 			st = con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs = st.executeQuery(queryList[i]);
