@@ -13,7 +13,7 @@
 	$('#form').submit(function() {
 
 		 $.ajax({
-             type: "POST",
+             type: "GET",
              url: "adv_process.jsp",
              data: 'host='+host+'&username='+ username+'&pwd='+pwd+'&port='+port+'&database='+dbase+'&sql='+sql,
              cache: false,
@@ -29,7 +29,7 @@
 	<br/><br/>
 	<div id="container">
 		<br/>
-		<form id="form" method="post">
+		<form id="form">
 			<table id="connection">
 				<tr>
 					<td>Host:</td>

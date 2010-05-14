@@ -10,7 +10,6 @@
 	String password = request.getParameter("pwd");
 	String port = request.getParameter("port");
 	String database = request.getParameter("dbase");
-	
 	String sqlquery = request.getParameter("sql");
 	
 	ResultSet rs;
