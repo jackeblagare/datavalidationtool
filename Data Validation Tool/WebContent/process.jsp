@@ -188,9 +188,7 @@
 	
 	query.callQueries();
 	
-	out.print(query.show());
-	
-	
+
 	out.print("<br/>");
 	for(int i=0;i<query.list;i++){
 		out.print(query.errorMsg[i]+"<br/>");
