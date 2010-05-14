@@ -11,7 +11,7 @@ public class Queries {
 	public ResultSet rs;
 	public Connection con;
     public Statement st;
-    public int err=0;
+    public int err = 0;
     
     public int[] getErrors(){
     	return errorsList;
@@ -19,19 +19,27 @@ public class Queries {
     }
     
 	public void callQueries(){
-		try {
-			con = DriverManager.getConnection("jdbc:mysql//localhost:3306/iris","root","");
-			st= con.createStatement();
+		
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+		}catch(ClassNotFoundException c){
+			c.printStackTrace();
+		}
+		
+		try {	
+			System.out.println("start");
+			con = DriverManager.getConnection("jdbc:mysql//172.29.33.30:3306/iris","root","");
+			st = con.createStatement();
 			for(int i = 0;i < list;i++){
-				rs=st.executeQuery(queryList[i]);
-				if(rs.next()){
+				rs = st.executeQuery(queryList[i]);
+				
+				System.out.println(rs);
+				
+				if(rs != null){
 					errorsList[err] = 1; //select statement returns data
 					err++;
-				}
-								
+				}				
 			} 
-			
-	    	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
