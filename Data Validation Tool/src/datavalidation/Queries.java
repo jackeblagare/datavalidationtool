@@ -24,15 +24,24 @@ public class Queries {
     
 	public void callQueries(){
 		
-		try{
-			Class.forName("com.mysql.jdbc.Driver");
-		}catch(ClassNotFoundException c){
-			c.printStackTrace();
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+		} catch (InstantiationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
+			
 		
 		try {	
 		
-			con = DriverManager.getConnection("jdbc:mysql//172.29.33.30:3306/iris","root","");
+			con = DriverManager.getConnection("jdbc:mysql://172.29.33.30:3306/iris","root","");
 			st = con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs = st.executeQuery(queryList[i]);
