@@ -11,6 +11,7 @@ public class Queries {
 	public ResultSet rs;
 	public Connection con;
     public Statement st;
+    public int err=0;
     
     public int[] getErrors(){
     	return errorsList;
@@ -24,12 +25,10 @@ public class Queries {
 			for(int i = 0;i < list;i++){
 				rs=st.executeQuery(queryList[i]);
 				if(rs.next()){
-					errorsList[i] = 1; //select statement returns data
+					errorsList[err] = 1; //select statement returns data
+					err++;
 				}
-				else{
-					errorsList[i] = 0;
-				}
-				
+								
 			} 
 			
 	    	
@@ -38,6 +37,7 @@ public class Queries {
 			e.printStackTrace();
 		}
     	
+		
 	}
 	
 	public void mapQuery(String queryID) 
@@ -80,7 +80,7 @@ public class Queries {
 			//No SQL query found
 		}
 		
-		else if (queryID.equals(Ids[6])) //Name type occurence
+		else if (queryID.equals(Ids[6])) //Name type occurrence
 		{
 			//DataError-0027: Germplasm with certain name types occurring more than once
 			queryList[list] = "SELECT g.gid,n.ntype,COUNT(*) as number_of_names_with_same_ntype FROM (germplsm as g INNER JOIN names as n ON g.gid = n.gid)WHERE g.grplce = 0 and n.nstat <> 9 AND n.ntype IN (1,2,3,9,11,21,1019)GROUP BY g.gid, n.ntype HAVING COUNT(n.nid) > 1";
