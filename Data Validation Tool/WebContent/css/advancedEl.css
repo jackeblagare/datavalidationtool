@@ -27,6 +27,7 @@
 	position: absolute;
 	top: 300px;
 	left: 160px;
+	overflow:auto;
 }
 
 #resultsIc{
