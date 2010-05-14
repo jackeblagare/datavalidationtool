@@ -23,6 +23,7 @@
 		while(rs.next()){
 			out.print(rs.getInt(1)+"<br/>");
 		}
+		rs.close();
     	st.close();
     	con.close();
 	} catch (SQLException e) {
