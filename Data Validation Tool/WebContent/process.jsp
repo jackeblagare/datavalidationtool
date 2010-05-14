@@ -188,13 +188,11 @@
 	
 	query.callQueries();
 	
-	out.print("<br>");
-	while(query.rs.next()){
-		out.print(query.rs.getInt("gid")+"<br/>");
-	}
-	for(int i=0;i<query.errorsList.length;i++){
+	out.print("<br/>");
+	
+	for(int i=0;i<=query.err;i++){
 		out.print("-------------");
-		out.print(query.errorsList[i]+"<br/><br/");	
+		out.print(query.errorsList[i]+"<br/><br/>");	
 	}
 	
 	
