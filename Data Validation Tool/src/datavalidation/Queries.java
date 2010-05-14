@@ -18,6 +18,10 @@ public class Queries {
     	
     }
     
+    public ResultSet show(){
+    	return rs;
+    }
+    
 	public void callQueries(){
 		
 		try{
@@ -27,14 +31,11 @@ public class Queries {
 		}
 		
 		try {	
-			System.out.println("start");
+		
 			con = DriverManager.getConnection("jdbc:mysql//172.29.33.30:3306/iris","root","");
 			st = con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs = st.executeQuery(queryList[i]);
-				
-				System.out.println(rs);
-				
 				if(rs != null){
 					errorsList[err] = 1; //select statement returns data
 					err++;
