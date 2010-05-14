@@ -21,7 +21,9 @@
 		con = DriverManager.getConnection("jdbc:mysql//"+host+":"+port+"/"+database,username,password);
 		st= con.createStatement();
 		rs= st.executeQuery(sqlquery);
-		
+		while(rs.next()){
+			out.print(rs.getInt("gid"));
+		}
     	
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
