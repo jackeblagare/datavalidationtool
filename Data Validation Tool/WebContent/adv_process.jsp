@@ -18,16 +18,17 @@
     Statement st;
     
     try {
-		con = DriverManager.getConnection("jdbc:mysql//"+host+":"+port+"/"+database,username,password);
+		con = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+database,username,password);
 		st= con.createStatement();
 		rs= st.executeQuery(sqlquery);
 		while(rs.next()){
-			out.print(rs.getInt("gid"));
+			out.print(rs.getInt(1)+"<br/>");
 		}
     	
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		//e.printStackTrace();
+		out.print(e.getMessage());
 	}
     
 %>
