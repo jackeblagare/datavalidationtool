@@ -198,41 +198,20 @@ $(document).ready(function() {
        			
         </div>
     </div>
-   
-    <div id="check">
-    	<p><b>Check:</b></p>
-    	<input type="checkbox" name="cdb" />Central Database<br/>
-    	<input type="checkbox" name="ldb" />Local Database		
-    </div>
+   		<a class="button" id="advancedQry" href="advanced.jsp"><span>Advanced Query</span></a>
     
-    <div id="output">
-    	<input type="checkbox" name="createFile"/>Create file(s) with error-flagged records?<br/>
-    	<fieldset>
-    		<legend>Output file type</legend>
-    		<input type="radio" name="file"/>Text (.txt)<br/>
-    		<input type="radio" name="file"/>PDF (.pdf)
-    	</fieldset>
-    	<fieldset>
-    		<legend>Output file name</legend>
-    		<input type="radio" name="filename"/>Timestamp first <input type="checkbox" name="errorDesc"/> Include error description<br/>
-    		<input type="radio" name="filename"/>Error code first
-    	</fieldset>
-    </div>
-    
-    <div id="opButtons">
-    	<a class="button" id="selectAllQ" href="#"><span>Select All Queries</span></a> 
+    	<a class="button" id="selectAllQ" href="#"><span>Select All Queries</span></a><br/><br/> 
     	<a class="button" id="deselectAllQ" href="#"><span>Deselect All Queries</span></a>
- 	</div>
- 	<div id="opButtons2">  
+ 	 	  
     	<input class="button" type="reset" value="RESET"/>
    		<input class="button" type="submit" value="RUN"/>
-    </div>
+    
     </form>
 </div>
 
-<div id="advanced">
-	<a class="button" id="advancedQry" href="advanced.jsp"><span>Advanced Query</span></a>
-</div>
+
+
+
 
 </body>
 </html>
