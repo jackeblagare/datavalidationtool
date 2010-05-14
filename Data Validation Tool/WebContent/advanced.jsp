@@ -8,13 +8,28 @@
 <title>Advanced Query</title>
 <link rel="stylesheet" href="css/main.css"/>
 <link rel="stylesheet" href="css/advancedEl.css"/>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$('#form').submit(function() {
+
+		 $.ajax({
+             type: "POST",
+             url: "adv_process.jsp",
+             data: 'host='+host+'&username='+ username+'&pwd='+pwd+'&port='+port+'&database='+dbase+'&sql='+sql,
+             cache: false,
+             success: function(response){
+			 	$("#results").html("<h3>" + response + "</h3>").fadeIn("slow");
+             }
+         });
+	});
+</script>
 </head>
 <body>
 	<a class="button" href="index.jsp"><span>&lt;&lt;Back</span></a> 
 	<br/><br/>
 	<div id="container">
 		<br/>
-		<form method="post" action="adv_process.jsp" >
+		<form id="form" method="post">
 			<table id="connection">
 				<tr>
 					<td>Host:</td>
@@ -54,8 +69,7 @@
 				<img src="images/results.png" height="30"/>
 		</div>
 		<h3 id="restxt">Results</h3>
-		<textarea rows="5" cols="84" id="results" name="results"></textarea>
-	
+		<div id="results"></div>
 	</div>
 	
 </body>
