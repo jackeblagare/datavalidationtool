@@ -187,7 +187,9 @@
 	}
 	
 	query.callQueries();
-	query.show();
+	out.print("dulds");
+	out.print(query.show());
+	out.print("duldy");
 	
 	out.print("<br/>");
 	
