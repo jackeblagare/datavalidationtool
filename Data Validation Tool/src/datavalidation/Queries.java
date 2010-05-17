@@ -9,7 +9,7 @@ public class Queries {
 	public String[] errorsList = new String[55];
 	public String[] errorMsg = new String[55];
 	public int list = 0;
-	public ResultSet rs;
+	public ResultSet rs,rs2;
 	public Connection con;
     public Statement st;
     public int err = 0;
@@ -50,12 +50,12 @@ public class Queries {
 			st = con.createStatement();
 			
 			
-			rs = st.executeQuery(sql);
+			rs2 = st.executeQuery(sql);
 			
-			rs.last();
-			rowCount= rs.getRow();
+			rs2.last();
+			rowCount= rs2.getRow();
 			
-			rs.close();
+			rs2.close();
 			st.close();
 			con.close();
     	}

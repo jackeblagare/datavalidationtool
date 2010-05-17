@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="css/advancedEl.css"/>
 <script src="js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-	$('#submitb').click(function(){
+$(function(){
+	$('.button').click(function(){
 		
 		var host= $("#host").val();
 		var username= $("#username").val();
@@ -31,6 +32,7 @@
              }
          });
 	});
+});
 </script>
 </head>
 <body>
@@ -38,7 +40,7 @@
 	<br/><br/>
 	<div id="container">
 		<br/>
-		<form method="post" action="#">
+		<form action="">
 			<table id="connection">
 				<tr>
 					<td>Host:</td>
@@ -68,7 +70,7 @@
 			<textarea rows="7" cols="50" id="sql" name="sql"></textarea><br/>
 			<p></p><br/>
 			<div id="opButtons">
-				<input type="submit" id="submitb" value="Run"/>
+				<input type="submit" name="submitb" class="button" id="submitb" value="Run"/>
 				<input type="reset"  value="Reset"/>
 			</div>
 			
