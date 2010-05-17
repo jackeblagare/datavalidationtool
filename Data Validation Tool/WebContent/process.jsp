@@ -191,7 +191,7 @@
 	String user = request.getParameter("username");
 	String pwd = request.getParameter("pwd");
 	String db = request.getParameter("dbase");
-	String sql = request.getParamater("sql");
+	String sql = request.getParameter("sql");
 			
 	query.executeAdvancedQry(host,port,user,pwd,db,sql);
 	out.print(query.rowCount);
