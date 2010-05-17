@@ -276,7 +276,7 @@
 	
 	
 	//print advanced query results
-	out.print("<div><p>Number of rows returned from advanced query:"+query.rowCount+"</p></div>");
+	out.print("<div><p>Number of rows returned from advanced query: "+query.rowCount+"</p></div>");
 	
 	
 %>
