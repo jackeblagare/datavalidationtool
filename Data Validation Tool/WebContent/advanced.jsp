@@ -9,10 +9,9 @@
 <link rel="stylesheet" href="css/main.css"/>
 <link rel="stylesheet" href="css/advancedEl.css"/>
 <script src="js/jquery.js" type="text/javascript"></script>
-<script type="text/javascript">
+<script>
 $(function(){
 	$('.button').click(function(){
-		
 		var host= $("#host").val();
 		var username= $("#username").val();
 		var pwd= $("#pwd").val();
@@ -31,7 +30,7 @@ $(function(){
 				
              }
          });
-	});
+	} );
 });
 </script>
 </head>
