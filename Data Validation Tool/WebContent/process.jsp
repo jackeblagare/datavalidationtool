@@ -1,18 +1,34 @@
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" %>
-<%@ page import = "datavalidation.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Data Validation Tool</title>
+		<link rel="stylesheet" href="css/processEl.css"/>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".errors tr").mouseover(function() {$(this).addClass("over");}).mouseout(function() {$(this).removeClass("over");});
+				$(".errors tr:even").addClass("alt");
+			});
+</script>
+	
+	</head>
+	
+	<body>
+	
+		<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+		<%@ page import = "datavalidation.*" %>
     
-<%
-	Queries query = new Queries();	
+		<%
+			Queries query = new Queries();	
 	
-	//checks whether a query is selected
-	int flag= 0;
+			//checks whether a query is selected
+			int flag= 0;
 	
-	if(request.getParameter("DMSgid") != null){
-		query.mapQuery("DMSgid");	
-		flag = 1;
-	}
+			if(request.getParameter("DMSgid") != null){
+				query.mapQuery("DMSgid");	
+				flag = 1;
+			}
 	
 	if(request.getParameter("DMSoindex") != null){
 		query.mapQuery("DMSoindex");
@@ -234,6 +250,19 @@
 		flag = 1;
 	}
 	
+	if(flag>0){
+		query.callQueries();
+		out.print("<table class="+"errors"+">");
+		out.print("<th></th>");
+		for(int i=0;i<query.list;i++){
+			out.print("<tr><td>"+query.errorMsg[i]+"</td></tr>");
+		
+		}
+		out.print("</table>");
+	}
+	
+	//Advanced query processing
+	
 	String host = request.getParameter("host");
 	String port = request.getParameter("port");
 	String user = request.getParameter("username");
@@ -242,14 +271,20 @@
 	String sql = request.getParameter("sql");
 			
 	query.executeAdvancedQry(host,port,user,pwd,db,sql);
-	out.print(query.rowCount);
 	
-	if(flag>0){
-		query.callQueries();
-		out.print("<br/>");
-		for(int i=0;i<query.list;i++){
-			out.print(query.errorMsg[i]+"<br/>");
-		}
-	}
+	
+	
+	//print advanced query results
+	out.print("<div><p>"+query.rowCount+"</p></div>");
+	
 	
 %>
+	<script type="text/javascript">
+		$(function(){
+			$("#basicResults").html("<p> </p>");
+		});
+	</script>
+	
+	<div id="advancedRows"></div>
+	</body>
+</html>
