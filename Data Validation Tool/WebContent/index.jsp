@@ -162,7 +162,7 @@ $(document).ready(function() {
        			<fieldset>
        				<legend>Options</legend>
        				<input type="radio" name="GMSopts" value="1" disabled="disabled"/>Include zero values
-       				<input type="radio" name="GMSopts" value="2" disabled="disabled"/>Exclude zero values"
+       				<input type="radio" name="GMSopts" value="2" disabled="disabled"/>Exclude zero values
        			</fieldset>
        			<fieldset id="gmsField">
        				<legend><b>GMS</b></legend>
@@ -191,8 +191,8 @@ $(document).ready(function() {
        				<a class="button" id="dmsSelectAll" href="#" disabled="disabled"><span>Select All</span></a> 
        				<a class="button" id="dmsDSelectAll" href="#" disabled="disabled"><span>Deselect All</span></a>
        				<br/><br/>
-       				<input type="checkbox" name="DMSfactor"/> FACTOR <br/>
-        			<input type="checkbox" name="DMSvariate"/> VARIATE <br/>
+       				<input type="checkbox" name="DMSfactor" disabled="disabled" /> FACTOR <br/>
+        			<input type="checkbox" name="DMSvariate" disabled="disabled" /> VARIATE <br/>
        			</fieldset>
        		</fieldset>
         </div>
