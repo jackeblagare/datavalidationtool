@@ -5,185 +5,233 @@
     
 <%
 	Queries query = new Queries();	
-
+	
+	//checks whether a query is selected
+	int flag= 0;
+	
 	if(request.getParameter("DMSgid") != null){
 		query.mapQuery("DMSgid");	
+		flag = 1;
 	}
 	
 	if(request.getParameter("DMSoindex") != null){
 		query.mapQuery("DMSoindex");
+		flag = 1;
 	}
 	
 	if(request.getParameter("DMStraitS") != null){
 		query.mapQuery("DMStraitS");
+		flag = 1;
 	}
 	
 	if(request.getParameter("DMSduplData") != null){
 		query.mapQuery("DMSduplData");
+		flag = 1;
 	}
 
 	if(request.getParameter("DMSduplLevel") != null){
 		query.mapQuery("DMSduplLevel");
+		flag = 1;
 	}
 	
 	if(request.getParameter("DMSlevel") != null){
 		query.mapQuery("DMSlevel");
+		flag = 1;
 	}
 	
 	if(request.getParameter("ISnameT") != null){
 		query.mapQuery("ISnameT");
+		flag = 1;
 	}
 	
 	if(request.getParameter("ISnameS") != null){
 		query.mapQuery("ISnameS");
+		flag = 1;
 	}
 	
 	if(request.getParameter("ISnameTGACC") != null){
 		query.mapQuery("ISnameTGACC");
+		flag = 1;
 	}
 	
 	if(request.getParameter("ISnameI") != null){
 		query.mapQuery("ISnameI");
+		flag = 1;
 	}
 	
 	if(request.getParameter("ISnameFmt") != null){
 		query.mapQuery("ISnameFmt");
+		flag = 1;
 	}
 	
 	if(request.getParameter("ISprefN") != null){
 		query.mapQuery("ISprefN");
+		flag = 1;
 	}
 	
 	if(request.getParameter("ISprefID") != null){
 		query.mapQuery("ISprefID");
+		flag = 1;
 	}
 	
 	if(request.getParameter("ISglocn") != null){
 		query.mapQuery("ISglocn");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSinP") != null){
 		query.mapQuery("GMSinP");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMScircR") != null){
 		query.mapQuery("GMScircR");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSincGc") != null){
 		query.mapQuery("GMSincGc");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSgloc") != null){
 		query.mapQuery("GMSgloc");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSdelP") != null){
 		query.mapQuery("GMSdelP");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSrepP") != null){
 		query.mapQuery("GMSrepP");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSnon") != null){
 		query.mapQuery("GMSnon");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSdupN") != null){
 		query.mapQuery("GMSdupN");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSposDup") != null){
 		query.mapQuery("GMSposDup");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSmethN") != null){
 		query.mapQuery("GMSmethN");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSctP") != null){
 		query.mapQuery("GMSctP");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSprN") != null){
 		query.mapQuery("GMSprN");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSgdate") != null){
 		query.mapQuery("GMSgdate");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSgdatePr") != null){
 		query.mapQuery("GMSgdatePr");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSndate") != null){
 		query.mapQuery("GMSndate");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSngdate") != null){
 		query.mapQuery("GMSngdate");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSAttr") != null){
 		query.mapQuery("GMSAttr");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSbib") != null){
 		query.mapQuery("GMSbib");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSchng") != null){
 		query.mapQuery("GMSchng");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSgeo") != null){
 		query.mapQuery("GMSgeo");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSgpm") != null){
 		query.mapQuery("GMSgpm");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSinstln") != null){
 		query.mapQuery("GMSinstln");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSlistd") != null){
 		query.mapQuery("GMSlistd");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSloc") != null){
 		query.mapQuery("GMSloc");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSlistnms") != null){
 		query.mapQuery("GMSlistnms");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSlocdes") != null){
 		query.mapQuery("GMSlocdes");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSmeth") != null){
 		query.mapQuery("GMSmeth");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSnames") != null){
 		query.mapQuery("GMSnames");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSprog") != null){
 		query.mapQuery("GMSprog");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSsndivs") != null){
 		query.mapQuery("GMSsndivs");
+		flag = 1;
 	}
 	
 	if(request.getParameter("GMSusrs") != null){
 		query.mapQuery("GMSusrs");
+		flag = 1;
 	}
 	
 	String host = request.getParameter("host");
@@ -196,16 +244,12 @@
 	query.executeAdvancedQry(host,port,user,pwd,db,sql);
 	out.print(query.rowCount);
 	
-	query.callQueries();
-	
-	out.print("<br/>");
-	for(int i=0;i<query.list;i++){
-		out.print(query.errorMsg[i]+"<br/>");
+	if(flag>0){
+		query.callQueries();
+		out.print("<br/>");
+		for(int i=0;i<query.list;i++){
+			out.print(query.errorMsg[i]+"<br/>");
+		}
 	}
-	
-	
-	
-	
-	
 	
 %>
