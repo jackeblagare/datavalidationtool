@@ -269,13 +269,14 @@
 	String pwd = request.getParameter("pwd");
 	String db = request.getParameter("dbase");
 	String sql = request.getParameter("sql");
-			
+	
+	//call method to execute query
 	query.executeAdvancedQry(host,port,user,pwd,db,sql);
 	
 	
 	
 	//print advanced query results
-	out.print("<div><p>"+query.rowCount+"</p></div>");
+	out.print("<div><p>Number of rows returned from advanced query:"+query.rowCount+"</p></div>");
 	
 	
 %>
