@@ -117,4 +117,22 @@ a.button:active {
 a.button:active span {
     background-position: bottom left;
     padding: 6px 0 4px 18px; /* push text down 1px */
-} 
+}
+
+#queryIc{
+	position: absolute;
+	top: 90px;
+	left:394px;
+}
+
+#sql{
+	position: absolute;
+	top:135px;
+	left:395px;
+}
+
+#sqltxt{
+	position: absolute;
+	top: 100px;
+	left: 450px;
+}
