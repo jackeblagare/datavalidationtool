@@ -219,6 +219,9 @@ $(document).ready(function() {
 					<td><input type="text" name="dbase" id="dbase" value="iris"/></td>
 				</tr>
 			</table>
+			<div id="queryIc">
+				<img src="images/query.png" height="30"/>
+			</div>
 			<h3 id="sqltxt">SQL Query</h3>
 			<textarea rows="7" cols="50" id="sql" name="sql"></textarea><br/>
 			<p></p><br/>
