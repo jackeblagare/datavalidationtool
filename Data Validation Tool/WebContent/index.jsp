@@ -30,9 +30,9 @@ $(document).ready(function() {
 	//all queries
 	 $("#selectAllQ").click(function(){
 		this.blur();
-	    $("#tab1>input:checkbox").each(function(){
+	    /*$("#tab1>input:checkbox").each(function(){
 	                this.checked = true;
-	    });
+	    });*/
 	    $("#tab2>input:checkbox").each(function(){
             this.checked = true;
 		});
@@ -100,16 +100,17 @@ $(document).ready(function() {
         <li><a href="#tab2">Implementation-specific</a></li>
         <li><a href="#tab3">Genealogy Management System</a></li>
         <li><a href="#tab4">Database foreign key references by table</a></li>
+        <li><a href="#tab5">Advanced Query</a></li>
         
     </ul>
     <div class="tab_container">
         <div id="tab1" class="tab_content">
-        	<input type="checkbox" name="DMSgid"/> Check GIDs in DMS that have been replaced in the GMS <br/>
-        	<input type="checkbox" name="DMSoindex"/> OINDEX table (Factorid ID or Level No is zero) <br/>
-        	<input type="checkbox" name="DMStraitS"/> Trait-Scale-Method Relationship <br/>
-        	<input type="checkbox" name="DMSduplData"/> Duplicate records in DATA_N,DATA_C tables <br/>
-        	<input type="checkbox" name="DMSduplLevel"/> Duplicate records in LEVEL_N,LEVEL_C tables <br/>
-        	<input type="checkbox" name="DMSlevel"/> Level inconsistency in labels of a factor <br/>
+        	<input type="checkbox" name="DMSgid" disabled="disabled"/> Check GIDs in DMS that have been replaced in the GMS <br/>
+        	<input type="checkbox" name="DMSoindex" disabled="disabled"/> OINDEX table (Factorid ID or Level No is zero) <br/>
+        	<input type="checkbox" name="DMStraitS" disabled="disabled"/> Trait-Scale-Method Relationship <br/>
+        	<input type="checkbox" name="DMSduplData" disabled="disabled"/> Duplicate records in DATA_N,DATA_C tables <br/>
+        	<input type="checkbox" name="DMSduplLevel" disabled="disabled"/> Duplicate records in LEVEL_N,LEVEL_C tables <br/>
+        	<input type="checkbox" name="DMSlevel" disabled="disabled"/> Level inconsistency in labels of a factor <br/>
         	
         </div>
         <div id="tab2" class="tab_content">
@@ -155,52 +156,76 @@ $(document).ready(function() {
         		</fieldset>
         	</fieldset>  
         </div>
+        
         <div id="tab4" class="tab_content">
        		<fieldset>
        			<fieldset>
        				<legend>Options</legend>
-       				<input type="radio" name="GMSopts" value="1"/>Include zero values
-       				<input type="radio" name="GMSopts" value="2"/>Exclude zero values"
+       				<input type="radio" name="GMSopts" value="1" disabled="disabled"/>Include zero values
+       				<input type="radio" name="GMSopts" value="2" disabled="disabled"/>Exclude zero values"
        			</fieldset>
        			<fieldset id="gmsField">
        				<legend><b>GMS</b></legend>
-       				<a class="button" id="gmsSelectAll" href="#"><span>Select All</span></a> 
-       				<a class="button" id="gmsDSelectAll" href="#"><span>Deselect All</span></a> 
+       				<a class="button" id="gmsSelectAll" href="#" disabled="disabled"><span>Select All</span></a> 
+       				<a class="button" id="gmsDSelectAll" href="#" disabled="disabled"><span>Deselect All</span></a> 
        				<br/><br/>
-       				<input type="checkbox" name="GMSAttr"/> ATRIBUTS <br/>
-        			<input type="checkbox" name="GMSbib"/> BIBREFS <br/>
-        			<input type="checkbox" name="GMSchng"/> CHANGES <br/>
-        			<input type="checkbox" name="GMSgeo"/> GEOREF <br/>
-        			<input type="checkbox" name="GMSgpm"/> GERMPLSM <br/>
-        			<input type="checkbox" name="GMSinstln"/> INSTLN <br/>
-        			<input type="checkbox" name="GMSlistd"/> LISTDATA <br/>
-        			<input type="checkbox" name="GMSloc"/> LOCATION <br/>
-        			<input type="checkbox" name="GMSlistnms"/> LISTNMS <br/>
-        			<input type="checkbox" name="GMSlocdes"/> LOCDES <br/>
-        			<input type="checkbox" name="GMSmeth"/> METHODS<br/>
-        			<input type="checkbox" name="GMSnames"/> NAMES <br/>
-       				<input type="checkbox" name="GMSprog"/> PROGNTRS <br/>
-        			<input type="checkbox" name="GMSsndivs"/> SNDIVS <br/>
-        			<input type="checkbox" name="GMSusrs"/> USERS <br/>
+       				<input type="checkbox" name="GMSAttr" disabled="disabled"/> ATRIBUTS <br/>
+        			<input type="checkbox" name="GMSbib" disabled="disabled"/> BIBREFS <br/>
+        			<input type="checkbox" name="GMSchng" disabled="disabled"/> CHANGES <br/>
+        			<input type="checkbox" name="GMSgeo" disabled="disabled"/> GEOREF <br/>
+        			<input type="checkbox" name="GMSgpm" disabled="disabled"/> GERMPLSM <br/>
+        			<input type="checkbox" name="GMSinstln" disabled="disabled"/> INSTLN <br/>
+        			<input type="checkbox" name="GMSlistd" disabled="disabled"/> LISTDATA <br/>
+        			<input type="checkbox" name="GMSloc" disabled="disabled"/> LOCATION <br/>
+        			<input type="checkbox" name="GMSlistnms" disabled="disabled"/> LISTNMS <br/>
+        			<input type="checkbox" name="GMSlocdes" disabled="disabled"/> LOCDES <br/>
+        			<input type="checkbox" name="GMSmeth" disabled="disabled"/> METHODS<br/>
+        			<input type="checkbox" name="GMSnames" disabled="disabled"/> NAMES <br/>
+       				<input type="checkbox" name="GMSprog" disabled="disabled"/> PROGNTRS <br/>
+        			<input type="checkbox" name="GMSsndivs" disabled="disabled"/> SNDIVS <br/>
+        			<input type="checkbox" name="GMSusrs" disabled="disabled"/> USERS <br/>
         		
        			</fieldset>
        			<fieldset id="dmsField">
        				<legend><b>DMS</b></legend>
-       				<a class="button" id="dmsSelectAll" href="#"><span>Select All</span></a> 
-       				<a class="button" id="dmsDSelectAll" href="#"><span>Deselect All</span></a>
+       				<a class="button" id="dmsSelectAll" href="#" disabled="disabled"><span>Select All</span></a> 
+       				<a class="button" id="dmsDSelectAll" href="#" disabled="disabled"><span>Deselect All</span></a>
        				<br/><br/>
        				<input type="checkbox" name="DMSfactor"/> FACTOR <br/>
         			<input type="checkbox" name="DMSvariate"/> VARIATE <br/>
-        			
        			</fieldset>
-       			
        		</fieldset>
-       			
+        </div>
+        <div id="tab5" class="tab_content">
+        	<table id="connection">
+				<tr>
+					<td>Host:</td>
+					<td><input type="text" name="host" id="host" value="localhost"/></td>
+				</tr>
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" name="username" id="host" value="root"/></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" id="pwd" name="pwd"/></td>
+				</tr>
+				<tr>
+					<td>Port:</td>
+					<td><input type="text" name="port" id="port" value="3306"/></td>
+				</tr>
+				<tr>
+					<td>Database:</td>
+					<td><input type="text" name="dbase" id="dbase" value="iris"/></td>
+				</tr>
+			</table>
+			<h3 id="sqltxt">SQL Query</h3>
+			<textarea rows="7" cols="50" id="sql" name="sql"></textarea><br/>
+			<p></p><br/>
         </div>
     </div>
     	
     	<br />
-   		<a class="button" id="advancedQry" href="advanced.jsp"><span>Advanced Query</span></a>
     	<a class="button" id="selectAllQ" href="#"><span>Select All Queries</span></a> 
     	<a class="button" id="deselectAllQ" href="#"><span>Deselect All Queries</span></a>
     	<br />
