@@ -186,25 +186,23 @@
 		query.mapQuery("GMSusrs");
 	}
 	
+	String host = request.getParameter("host");
+	String port = request.getParameter("port");
+	String user = request.getParameter("username");
+	String pwd = request.getParameter("pwd");
+	String db = request.getParameter("dbase");
+	String sql = request.getParamater("sql");
+			
+	query.executeAdvancedQry(host,port,user,pwd,db,sql);
+	out.print(query.rowCount);
 	
-	if(request.getParameter("sql")!=null){
-		String host = request.getParameter("host");
-		String port = request.getParameter("port");
-		String user = request.getParameter("username");
-		String pwd = request.getParameter("pwd");
-		String db = request.getParameter("dbase");
-		String sql = request.getParamater("sql");
-		
-		
-		query.executeAdvancedQry();
+	query.callQueries();
+	
+	out.print("<br/>");
+	for(int i=0;i<query.list;i++){
+		out.print(query.errorMsg[i]+"<br/>");
 	}
-	else{
-		query.callQueries();
-		out.print("<br/>");
-		for(int i=0;i<query.list;i++){
-			out.print(query.errorMsg[i]+"<br/>");
-		}
-	}
+	
 	
 	
 	
