@@ -204,7 +204,7 @@ $(document).ready(function() {
 				</tr>
 				<tr>
 					<td>Username:</td>
-					<td><input type="text" name="username" id="host" value="root"/></td>
+					<td><input type="text" name="username" id="username" value="root"/></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
