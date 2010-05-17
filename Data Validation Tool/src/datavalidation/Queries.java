@@ -14,6 +14,8 @@ public class Queries {
     public Statement st;
     public int err = 0;
     
+    public int rowCount; //number of rows returned
+    
     public String[] getErrors(){
     	return errorsList;
     	
@@ -28,9 +30,42 @@ public class Queries {
     	return errorMsg[index];
     }
     
-	public void callQueries(){
+    public void executeAdvancedQry(String host,String port,String db,String user,String pwd,String sql){
+    	try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+		} catch (InstantiationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+			
 		
-		
+    	try{
+    		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iris","root","");
+			st = con.createStatement();
+			
+			
+			rs = st.executeQuery(sql);
+			
+			rs.last();
+			rowCount= rs.getRow();
+			
+			rs.close();
+			st.close();
+			con.close();
+    	}
+    	catch(SQLException e){
+    		e.printStackTrace();
+    	}
+    }
+    
+    
+	public void callQueries(){		
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 		} catch (InstantiationException e1) {
@@ -56,7 +91,8 @@ public class Queries {
 					errorsList[err] = mapError(i); //select statement returns data
 					err++;
 				}				
-			} 
+			}
+			
 			rs.close();
 			st.close();
 			con.close();
