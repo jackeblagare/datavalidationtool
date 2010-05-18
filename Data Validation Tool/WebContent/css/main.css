@@ -138,10 +138,12 @@ a.button:active span {
 }
 
 #indicator{
-	background-image: url('../images/ajax-loader.gif');
+	text-align: center;
 	filter:alpha(opacity=50);
 	-moz-opacity:0.5;
 	-khtml-opacity: 0.5;
 	opacity: 0.5;
-	background-color: #439b35;
+	/*background-color: #439b35;*/
+	height:100px;
+	width:500px;
 }
