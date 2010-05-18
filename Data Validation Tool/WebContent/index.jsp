@@ -86,6 +86,10 @@ $(document).ready(function() {
 				    });
 				    
 			});	
+
+
+			//submit form using ajax
+			
 	
 });
 </script>
