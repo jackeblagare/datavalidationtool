@@ -161,6 +161,6 @@
     	    
     	    </form>
 		</div>
-
+		<div id="indicator"></div>
 	</body>
 </html>
