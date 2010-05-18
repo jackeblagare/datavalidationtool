@@ -9,6 +9,7 @@ public class Queries {
 	public String[] errorsList = new String[55];
 	public String[] errorMsg = new String[55];
 	public ArrayList<ResultSet> results = new ArrayList<ResultSet>();
+	public ArrayList rowdata = new ArrayList();
 	public int list = 0;
 	public ResultSet rs,rs2;
 	public Connection con;
@@ -21,7 +22,7 @@ public class Queries {
     	return errorsList;	
     }
     
-    public String show(){
+    public String show(String dataError){
     	
     	return results.toString();
     }
@@ -41,8 +42,15 @@ public class Queries {
     		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iris","root","");
 			st = con.createStatement();
 
-			rs = st.executeQuery(sql);		
+			//rs = st.executeQuery(sql);		
 			rs2 = st.executeQuery(sql);
+			ResultSetMetaData rsmd = rs.getMetaData();
+			while(rs.next()){
+				for(int i=1;i<=rsmd.getColumnCount();i++){
+					rs.getObject(i);
+				}
+			}
+			
 			rs2.last();
 			rowCount= rs2.getRow();
 			
