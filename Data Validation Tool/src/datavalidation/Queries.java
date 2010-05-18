@@ -49,7 +49,7 @@ public class Queries {
 			while(rs2.next()){
 				for(int i=1;i<=noOfColumns;i++){
 					store[i] = rs2.getObject(i);
-					System.out.print(store[i]);
+					System.out.print("Column"+i+"="+store[i]);
 				} 
 			}
 			
