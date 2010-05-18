@@ -11,7 +11,9 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	//$("#run").attr('disabled','disabled');
+
+	//disable RUN button until input is selected
+	$('input:checkbox').is(':checked') ? $('#run').removeAttr('disabled') : $("#run").attr('disabled','disabled');
 	
 	//Default Action
 	$(".tab_content").hide(); //Hide all content
@@ -89,11 +91,6 @@ $(document).ready(function() {
 			});	
 
 
-			//disable RUN button until input is selected
-			var n = $("input:checked").length;
-   
-        	alert("test: "+test);		
-	     	  
 			//submit form using ajax
 			
 	
