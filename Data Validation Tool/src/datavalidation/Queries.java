@@ -70,9 +70,9 @@ public class Queries {
 			st = con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs = st.executeQuery(queryList[i]);
-				do{
+				while(rs.next()){
 					results.add(rs);
-				}while(rs.next());
+				}
 				if(rs != null){
 					errorsList[err] = mapError(i); //select statement returns data
 					err++;
