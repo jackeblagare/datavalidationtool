@@ -44,11 +44,11 @@ public class Queries {
 
 			//rs = st.executeQuery(sql);		
 			rs2 = st.executeQuery(sql);
-			ResultSetMetaData rsmd = rs.getMetaData();
-			while(rs.next()){
+			ResultSetMetaData rsmd = rs2.getMetaData();
+			while(rs2.next()){
 				for(int i=1;i<=rsmd.getColumnCount();i++){
 					System.out.println(rsmd.getColumnCount());
-					System.out.println(rs.getObject(i));
+					System.out.println(rs2.getObject(i));
 				}
 			}
 			
