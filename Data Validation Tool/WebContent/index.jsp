@@ -155,8 +155,7 @@
     			<br />
  	 			<hr />
  	 			<br />
-    			
-    			
+ 	 			 			
     			<input class="button" type="reset" value="RESET"/>
    				<input class="button" id="run" type="submit" value="RUN"/> 
     	    
