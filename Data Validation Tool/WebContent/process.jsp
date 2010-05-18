@@ -254,9 +254,8 @@
 		query.callQueries();
 		out.print("<table class="+"errors"+">");
 		out.print("<th></th>");
-		for(int i=0;i<query.list;i++){
-			out.print("<tr><td>"+query.errorMsg[i]+"</td></tr>");
-		
+		for(int i=0;i<query.err;i++){
+			out.print("<tr><td>"+query.errorsList[i]+"</td></tr>");
 		}
 		out.print("</table>");
 	}
