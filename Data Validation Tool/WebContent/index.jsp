@@ -161,6 +161,6 @@
     	    
     	    </form>
 		</div>
-		<div id="indicator"></div>
+		<div id="indicator"><img src="images/ajax-loader.gif"/><p>Queries are being executed. Please wait.</p>&nbsp;</div>
 	</body>
 </html>
