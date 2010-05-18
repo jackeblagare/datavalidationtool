@@ -21,14 +21,14 @@
     
 		<%
 			Queries query = new Queries();	
-	
+		
 			//checks whether a query is selected
 			int flag= 0;
 	
-			if(request.getParameter("DMSgid") != null){
-				query.mapQuery("DMSgid");	
-				flag = 1;
-			}
+	if(request.getParameter("DMSgid") != null){
+		query.mapQuery("DMSgid");	
+		flag = 1;
+	}
 	
 	if(request.getParameter("DMSoindex") != null){
 		query.mapQuery("DMSoindex");
@@ -253,7 +253,7 @@
 	if(flag>0){
 		query.callQueries();
 		out.print("<table class="+"errors"+">");
-		out.print("<th></th>");
+		out.print("<th>"+query.err+" data errors found </th>");
 		for(int i=0;i<query.err;i++){
 			out.print("<tr><td>"+query.errorsList[i]+"</td></tr>");
 		}
@@ -271,13 +271,14 @@
 	
 	//call method to execute query
 	query.executeAdvancedQry(host,port,user,pwd,db,sql);
-	
-	
-	
+%>
+	<div id="resultsIc">
+		<h3 id="restxt">Advanced Query Results</h3>
+	</div>
+<%
 	//print advanced query results
-	out.print("<div><p>Number of rows returned from advanced query: "+query.rowCount+"</p></div>");
-	
-	
+		out.print("<p>SQL query returned "+query.rowCount+" results.</p>");
+
 %>
 	<script type="text/javascript">
 		$(function(){
