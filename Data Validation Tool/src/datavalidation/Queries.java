@@ -29,7 +29,12 @@ public class Queries {
     }
     
     public void executeAdvancedQry(String host,String port,String db,String user,String pwd,String sql){
-    	
+    	try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
     	try{
     		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iris","root","");
 			st = con.createStatement();
@@ -49,20 +54,13 @@ public class Queries {
     }
     
     
-	public void callQueries(){		
-		/*try {
+	public void callQueries(){	
+		
+		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-		} catch (InstantiationException e1) {
-			// TODO Auto-generated catch block
+		} catch (Exception e1) {
 			e1.printStackTrace();
-		} catch (IllegalAccessException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}*/
-			
+		}	
 		
 		try {	
 		
