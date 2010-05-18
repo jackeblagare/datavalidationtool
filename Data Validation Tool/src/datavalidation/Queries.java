@@ -17,8 +17,7 @@ public class Queries {
     public int rowCount; //number of rows returned
     
     public String[] getErrors(){
-    	return errorsList;
-    	
+    	return errorsList;	
     }
     
     public ResultSet show(){
@@ -26,7 +25,6 @@ public class Queries {
     }
     
     public String mapError(int index){
-    	
     	return errorMsg[index];
     }
     
@@ -35,10 +33,9 @@ public class Queries {
     	try{
     		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iris","root","");
 			st = con.createStatement();
-			
-			
+
+			rs = st.executeQuery(sql);		
 			rs2 = st.executeQuery(sql);
-			
 			rs2.last();
 			rowCount= rs2.getRow();
 			
@@ -53,7 +50,7 @@ public class Queries {
     
     
 	public void callQueries(){		
-		try {
+		/*try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 		} catch (InstantiationException e1) {
 			// TODO Auto-generated catch block
@@ -64,14 +61,15 @@ public class Queries {
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}
+		}*/
 			
 		
 		try {	
 		
+			System.out.print("AHJSK");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iris","root","");
+			System.out.print("AHJSK");
 			st = con.createStatement();
-			
 			for(int i = 0;i < list;i++){
 				rs = st.executeQuery(queryList[i]);
 				if(rs != null){
@@ -83,6 +81,7 @@ public class Queries {
 			rs.close();
 			st.close();
 			con.close();
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
