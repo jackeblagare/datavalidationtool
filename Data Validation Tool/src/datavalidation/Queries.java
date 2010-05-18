@@ -47,7 +47,7 @@ public class Queries {
 			ResultSetMetaData rsmd = rs.getMetaData();
 			while(rs.next()){
 				for(int i=1;i<=rsmd.getColumnCount();i++){
-					rs.getObject(i);
+					System.out.println(rs.getObject(i));
 				}
 			}
 			
