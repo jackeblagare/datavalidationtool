@@ -12,8 +12,24 @@
 
 $(document).ready(function() {
 
-	//disable RUN button until input is selected
-	$('input:checkbox').is(':checked') ? $('#run').removeAttr('disabled') : $("#run").attr('disabled','disabled');
+	/*
+		Checks whether a query is selected. If so, enable RUN button.
+	*/
+	$(':checkbox').click(function(){
+		if ($(':checkbox').is(':checked')) {
+        	$('#run').removeAttr('disabled');
+    	} else {
+        	$('#run').attr('disabled', true);    
+    	}   
+	});
+
+	/*
+		Disables all elements in the fifth tab
+	*/
+	$("#tab5 :input :not('#enableAdv')").attr('disabled', true);
+
+	
+
 	
 	//Default Action
 	$(".tab_content").hide(); //Hide all content
@@ -204,6 +220,7 @@ $(document).ready(function() {
        		</fieldset>
         </div>
         <div id="tab5" class="tab_content">
+        	<input type="checkbox" id="enableAdv" name="enableAdv" />
         	<table id="connection">
 				<tr>
 					<td>Host:</td>

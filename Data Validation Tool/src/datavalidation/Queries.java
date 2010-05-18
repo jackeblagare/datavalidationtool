@@ -8,7 +8,7 @@ public class Queries {
 	public String[] queryList = new String[55];
 	public String[] errorsList = new String[55];
 	public String[] errorMsg = new String[55];
-	public ArrayList<ResultSet> results;
+	public ArrayList<ResultSet> results = new ArrayList<ResultSet>();
 	public int list = 0;
 	public ResultSet rs,rs2;
 	public Connection con;
@@ -70,12 +70,12 @@ public class Queries {
 			st = con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs = st.executeQuery(queryList[i]);
+				System.out.println("after st.execute");
 				while(rs.next()){
+					System.out.println(rs);
 					results.add(rs);
 				}
 				if(rs != null){
-					System.out.print(rs.getFetchSize());
-					
 					errorsList[err] = mapError(i); //select statement returns data
 					err++;
 				}				
