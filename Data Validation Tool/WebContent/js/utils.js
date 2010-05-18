@@ -16,7 +16,7 @@ $(document).ready(function() {
 		Enables Run button if a query has been inputted.
 	*/
 
-	$("#sql").keyup(function(){
+	$("#sql").change(function(){
 		var sql=$("#sql").val();
 		if(sql!=""){
 			$("#run").removeAttr('disabled');
