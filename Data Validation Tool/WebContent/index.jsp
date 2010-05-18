@@ -11,7 +11,8 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-
+	//$("#run").attr('disabled','disabled');
+	
 	//Default Action
 	$(".tab_content").hide(); //Hide all content
 	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
@@ -88,6 +89,11 @@ $(document).ready(function() {
 			});	
 
 
+			//disable RUN button until input is selected
+			var n = $("input:checked").length;
+   
+        	alert("test: "+test);		
+	     	  
 			//submit form using ajax
 			
 	
@@ -239,7 +245,7 @@ $(document).ready(function() {
  	 	<hr />
  	 	<br />
     	<input class="button" type="reset" value="RESET"/>
-   		<input class="button" type="submit" value="RUN"/>
+   		<input class="button" id="run" type="submit" value="RUN"/> 
     </form>
 </div>
 
