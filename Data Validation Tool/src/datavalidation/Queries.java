@@ -47,6 +47,7 @@ public class Queries {
 			ResultSetMetaData rsmd = rs.getMetaData();
 			while(rs.next()){
 				for(int i=1;i<=rsmd.getColumnCount();i++){
+					System.out.println(rsmd.getColumnCount());
 					System.out.println(rs.getObject(i));
 				}
 			}
@@ -78,9 +79,7 @@ public class Queries {
 			st = con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs = st.executeQuery(queryList[i]);
-				System.out.println("after st.execute");
 				while(rs.next()){
-					System.out.println(rs);
 					results.add(rs);
 				}
 				if(rs != null){
