@@ -66,9 +66,7 @@ public class Queries {
 		
 		try {	
 		
-			System.out.print("AHJSK");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iris","root","");
-			System.out.print("AHJSK");
 			st = con.createStatement();
 			for(int i = 0;i < list;i++){
 				rs = st.executeQuery(queryList[i]);
