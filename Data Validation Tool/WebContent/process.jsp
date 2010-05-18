@@ -277,7 +277,11 @@
 	</div>
 <%
 	//print advanced query results
-		out.print("<p>SQL query returned "+query.rowCount+" results.</p>");
+		out.print("<p>SQL query returned "+query.rowCount+" results.  ");
+		if(query.rowCount > 0){
+			out.print("<input type= \"button\" value =\"Show results\" onclick=\"\" />");
+		}
+		out.print("</p>");
 
 %>
 	<script type="text/javascript">
