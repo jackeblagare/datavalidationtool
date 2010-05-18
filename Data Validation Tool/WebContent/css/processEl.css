@@ -1,4 +1,10 @@
 @CHARSET "ISO-8859-1";
+p {
+	font-family: Georgia;
+	color: #bcd4ec; 
+	font-size: 1.2em;
+}
+
 table {
 	border-collapse: collapse;
 	width: 50%;
