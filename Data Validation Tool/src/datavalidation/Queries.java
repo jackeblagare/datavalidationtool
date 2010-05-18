@@ -41,15 +41,16 @@ public class Queries {
     	try{
     		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iris","root","");
 			st = con.createStatement();
-
-			//rs = st.executeQuery(sql);		
+		
 			rs2 = st.executeQuery(sql);
 			ResultSetMetaData rsmd = rs2.getMetaData();
+			int noOfColumns = rsmd.getColumnCount();
+			Object[] store = new Object[noOfColumns];
 			while(rs2.next()){
-				for(int i=1;i<=rsmd.getColumnCount();i++){
-					System.out.println(rsmd.getColumnCount());
-					System.out.println(rs2.getObject(i));
-				}
+				for(int i=1;i<=noOfColumns;i++){
+					store[i] = rs2.getObject(i);
+					System.out.print(store[i]);
+				} 
 			}
 			
 			rs2.last();
