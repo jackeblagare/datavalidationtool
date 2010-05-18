@@ -45,7 +45,7 @@ public class Queries {
 			rs2 = st.executeQuery(sql);
 			ResultSetMetaData rsmd = rs2.getMetaData();
 			int noOfColumns = rsmd.getColumnCount();
-			Object[] store = new Object[noOfColumns];
+			Object[] store = new Object[noOfColumns + 1];
 			while(rs2.next()){
 				for(int i=1;i<=noOfColumns;i++){
 					store[i] = rs2.getObject(i);
