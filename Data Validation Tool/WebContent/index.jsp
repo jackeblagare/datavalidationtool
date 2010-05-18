@@ -24,10 +24,18 @@ $(document).ready(function() {
 	});
 
 	/*
-		Disables all elements in the fifth tab
+		
 	*/
-	$("#tab5 :input :not('#enableAdv')").attr('disabled', true);
 
+	$("#sql").keyup(function(){
+		var sql=$("#sql").val();
+		if(sql!=""){
+			$("#run").removeAttr('disabled');
+		}
+		else{
+			$('#run').attr('disabled', true);    
+		}
+	});
 	
 
 	
@@ -220,7 +228,6 @@ $(document).ready(function() {
        		</fieldset>
         </div>
         <div id="tab5" class="tab_content">
-        	<input type="checkbox" id="enableAdv" name="enableAdv" />
         	<table id="connection">
 				<tr>
 					<td>Host:</td>
