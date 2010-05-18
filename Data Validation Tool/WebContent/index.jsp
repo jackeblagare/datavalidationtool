@@ -1,64 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Data Validation Tool</title>
-<link rel="stylesheet" href="css/main.css"/>
-<link rel="stylesheet" href="css/indexEl.css"/>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/utils.js"></script>
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Data Validation Tool</title>
+		<link rel="stylesheet" href="css/main.css"/>	
+		<link rel="stylesheet" href="css/indexEl.css"/>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/utils.js"></script>
+	</head>
 
-<body>
-<br/>
-<div id="data" class="container">
-	<form method="post" action="process.jsp" > <!-- FORM -->
-    <ul class="tabs">
-        <li><a href="#tab1">Data Management System</a></li>
-        <li><a href="#tab2">Implementation-specific</a></li>
-        <li><a href="#tab3">Genealogy Management System</a></li>
-        <li><a href="#tab4">Database foreign key references by table</a></li>
-        <li><a href="#tab5">Advanced Query</a></li>
-        
-    </ul>
-    <div class="tab_container">
-        <div id="tab1" class="tab_content">
-        	<input type="checkbox" name="DMSgid" disabled="disabled"/> Check GIDs in DMS that have been replaced in the GMS <br/>
-        	<input type="checkbox" name="DMSoindex" disabled="disabled"/> OINDEX table (Factorid ID or Level No is zero) <br/>
-        	<input type="checkbox" name="DMStraitS" disabled="disabled"/> Trait-Scale-Method Relationship <br/>
-        	<input type="checkbox" name="DMSduplData" disabled="disabled"/> Duplicate records in DATA_N,DATA_C tables <br/>
-        	<input type="checkbox" name="DMSduplLevel" disabled="disabled"/> Duplicate records in LEVEL_N,LEVEL_C tables <br/>
-        	<input type="checkbox" name="DMSlevel" disabled="disabled"/> Level inconsistency in labels of a factor <br/>
+	<body>
+		<br/>
+		<div id="data" class="container">
+			<form method="post" action="process.jsp" > <!-- FORM -->
+    			<ul class="tabs">
+        			<li><a href="#tab1">Data Management System</a></li>
+        			<li><a href="#tab2">Implementation-specific</a></li>
+        			<li><a href="#tab3">Genealogy Management System</a></li>
+        			<li><a href="#tab4">Database foreign key references by table</a></li>
+        			<li><a href="#tab5">Advanced Query</a></li>
+    			</ul>
+    			
+    			<div class="tab_container">
+        			<div id="tab1" class="tab_content">
+        				<input type="checkbox" name="DMSgid" disabled="disabled"/> Check GIDs in DMS that have been replaced in the GMS <br/>
+        				<input type="checkbox" name="DMSoindex" disabled="disabled"/> OINDEX table (Factorid ID or Level No is zero) <br/>
+        				<input type="checkbox" name="DMStraitS" disabled="disabled"/> Trait-Scale-Method Relationship <br/>
+        				<input type="checkbox" name="DMSduplData" disabled="disabled"/> Duplicate records in DATA_N,DATA_C tables <br/>
+        				<input type="checkbox" name="DMSduplLevel" disabled="disabled"/> Duplicate records in LEVEL_N,LEVEL_C tables <br/>
+        				<input type="checkbox" name="DMSlevel" disabled="disabled"/> Level inconsistency in labels of a factor <br/>
         	
-        </div>
-        <div id="tab2" class="tab_content">
-        	<input type="checkbox" name="ISnameT"/> Name type occurence <br/>
-        	<input type="checkbox" name="ISnameS"/> Name sharing (ACCNO,ITEST,GACC,RELNM) <br/>
-        	<input type="checkbox" name="ISnameTGACC"/> Name type GACC (Genebank accession) <br/>
-        	<input type="checkbox" name="ISnameI"/> Name inheritance from GPID2 (NSTAT,NDATE,NLOCN)<br/>
-        	<input type="checkbox" name="ISnameFmt"/> <input type="text" size="5" name="nameFmt" value="IRGC"/> name format <br/>
-        	<input type="checkbox" name="ISprefN"/> Preferred name eligibility (name types) <br/>
-        	<input type="checkbox" name="ISprefID"/> Preferred ID eligibility (name types) <br/>
-        	<input type="checkbox" name="ISglocn"/> Creation location (GLOCN) of germplasms imported by: <input type="text" name="locnName" size="7" value="IRRI"/> <br/>   
-        </div>
-       <div id="tab3" class="tab_content">
-        	<fieldset>
-        		<legend>GERMPLSM</legend>
-        		<input type="checkbox" name="GMSinP"/> Incorrect parent references <br/>
-        		<input type="checkbox" name="GMScircR"/> Circular references <br/>
-        		<input type="checkbox" name="GMSincGc"/> Incorrect germplasm creation method <br/>
-        		<input type="checkbox" name="GMSgloc"/> Germplasm location <br/>
-        		<input type="checkbox" name="GMSdelP"/> Deleted parent references <br/>
-        		<input type="checkbox" name="GMSrepP"/> Replaced parent references <br/>		
-        	</fieldset>
-        	<fieldset>
-        		<legend>NAMES</legend>
-        		<input type="checkbox" name="GMSnon"/> No names <br/>
-        		<input type="checkbox" name="GMSdupN"/> Duplicate names <br/>
-        		<input type="checkbox" name="GMSposDup"/> Possible duplicate names <br/>
-        		<input type="checkbox" name="GMSmethN"/> Method and name type combinations <br/>
-        		<input type="checkbox" name="GMSctP"/> Count preferred IDs <br/>
+        			</div>
+        
+        			<div id="tab2" class="tab_content">
+        				<input type="checkbox" name="ISnameT"/> Name type occurence <br/>
+        				<input type="checkbox" name="ISnameS"/> Name sharing (ACCNO,ITEST,GACC,RELNM) <br/>
+        				<input type="checkbox" name="ISnameTGACC"/> Name type GACC (Genebank accession) <br/>
+        				<input type="checkbox" name="ISnameI"/> Name inheritance from GPID2 (NSTAT,NDATE,NLOCN)<br/>
+        				<input type="checkbox" name="ISnameFmt"/> <input type="text" size="5" name="nameFmt" value="IRGC"/> name format <br/>
+        				<input type="checkbox" name="ISprefN"/> Preferred name eligibility (name types) <br/>
+        				<input type="checkbox" name="ISprefID"/> Preferred ID eligibility (name types) <br/>
+        				<input type="checkbox" name="ISglocn"/> Creation location (GLOCN) of germplasms imported by: <input type="text" name="locnName" size="7" value="IRRI"/> <br/>   
+        			</div>
+        			
+       				<div id="tab3" class="tab_content">
+        				<fieldset>
+        					<legend>GERMPLSM</legend>
+        					<input type="checkbox" name="GMSinP"/> Incorrect parent references <br/>
+        					<input type="checkbox" name="GMScircR"/> Circular references <br/>
+        					<input type="checkbox" name="GMSincGc"/> Incorrect germplasm creation method <br/>
+        					<input type="checkbox" name="GMSgloc"/> Germplasm location <br/>
+        					<input type="checkbox" name="GMSdelP"/> Deleted parent references <br/>
+        					<input type="checkbox" name="GMSrepP"/> Replaced parent references <br/>		
+        				</fieldset>
+        				<fieldset>
+        					<legend>NAMES</legend>
+        						<input type="checkbox" name="GMSnon"/> No names <br/>
+        						<input type="checkbox" name="GMSdupN"/> Duplicate names <br/>
+        						<input type="checkbox" name="GMSposDup"/> Possible duplicate names <br/>
+        						<input type="checkbox" name="GMSmethN"/> Method and name type combinations <br/>
+        						<input type="checkbox" name="GMSctP"/> Count preferred IDs <br/>
         		<input type="checkbox" name="GMSprN"/> Count preferred names <br/>
         	</fieldset>
         	<fieldset>
