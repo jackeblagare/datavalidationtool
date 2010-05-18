@@ -74,6 +74,8 @@ public class Queries {
 					results.add(rs);
 				}
 				if(rs != null){
+					System.out.print(rs.getFetchSize());
+					
 					errorsList[err] = mapError(i); //select statement returns data
 					err++;
 				}				
