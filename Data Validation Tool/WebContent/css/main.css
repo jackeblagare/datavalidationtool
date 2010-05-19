@@ -144,10 +144,10 @@ a.button:active span {
 	-khtml-opacity: 0.5;
 	opacity: 0.5;
 	background-color: #439b35;
-	height:100px;
+	height:150px;
 	width:500px;
 	z-index: 9000;
-	
+	margin-top: 100px;
 	margin: 30px auto;
 	position: absolute;
 	top: 25%;
