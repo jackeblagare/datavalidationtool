@@ -18,7 +18,7 @@
 				}
 				else{
 					// data
-					out.print("Data Row "+ j +" -- "results.store[i]);
+					out.print("Data Row "+ j +" -- "+results.store[i]);
 				}
 		}
 	}
