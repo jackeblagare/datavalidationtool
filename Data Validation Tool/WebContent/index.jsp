@@ -184,7 +184,7 @@ response.setDateHeader("Expires",-1);
 			<div></div>
 			<div></div>
 			<img src="images/ajax-loader.gif"/>
-			<h2>Processing request.Please wait.</h2>
+			<div id="#msgBox"><h2>Processing request.Please wait.</h2></div>
 		</div>
 		<div id="container2"><p></p></div>
 	</body>
