@@ -12,7 +12,17 @@
 				$(".errors tr").mouseover(function() {$(this).addClass("over");}).mouseout(function() {$(this).removeClass("over");});
 				$(".errors tr:even").addClass("alt");
 			});
-</script>
+		</script>
+		<script type="text/javascript">
+			$(document).ready(
+			function() {
+				$("#table1").ingrid({ 
+					url: 'remote.html',
+					height: 350
+				});
+			}
+		); 
+	</script>
 	
 	</head>
 	
@@ -277,32 +287,27 @@
 	<div id="resultsIc">
 		<h3 id="restxt">Advanced Query Results</h3>
 	</div>
-	
-	<table id = "table1">
-	<thead>
+	<table>
+		<thead>
 		<tr>
-			<th>Column 1</th>
-			<th>Column 2</th>
-			<th>Column 3</th>
+		<%
+			for(int k=1;k <= query.getColCount();k++){
+				out.print("<td>"+ query.columnNames.get(k - 1) +"</td>");
+			}
+		%>
 		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Static 1</td>
-			<td>Static 2</td>
-			<td>Static 3</td>
-		</tr>
-		<tr>
-			<td>Static 1</td>
-			<td>Static 2</td>
-			<td>Static 3</td>
-		</tr>
-		<tr>
-			<td>Static 1</td>
-			<td>Static 2</td>
-			<td>Static 3</td>
-		</tr>
-	</tbody>
+		</thead>
+		<tbody>
+		<%
+			for(int i=0;i < query.getRowCount();i++){
+				out.print("<tr>");
+				for(int j=1;j <= query.getColCount();j++){
+						out.print("<td>"+ query.store[i][j] +"</td>");
+				}
+				out.print("</tr>");
+			}
+		%>
+		</tbody>
 	</table>
 	
 <%
@@ -312,24 +317,6 @@
 			out.print("<input type= \"button\" value =\"Show results\" onclick=\"append_row();\" />");
 		//}
 		out.print("</p>");
-		
-		out.print("ROW COUNT = " + query.getRowCount());
-		out.print("COLUMN COUNT = " + query.getColCount());
-		out.print("<br />");
-		for(int i=0;i <= query.getRowCount();i++){
-			for(int j=1;j <= query.getColCount();j++){
-					//out.print("HELLO WORLD"+ i +"---"+ j);
-					if(i == 0){
-						//column names
-						out.print(query.columnNames.get(j - 1)+"----");
-					}
-					else{
-						// data
-						out.print(query.store[i - 1][j]+"----");
-					}
-			}
-			out.print("<br />");
-		}
 %>
 
 	<script type="text/javascript">
