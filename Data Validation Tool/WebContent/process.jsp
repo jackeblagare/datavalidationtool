@@ -279,21 +279,21 @@
 	//print advanced query results
 		out.print("<p>SQL query returned "+query.rowCount+" results.  ");
 		//if(query.rowCount > 0){
-			out.print("<input type= \"button\" value =\"Show results\" onclick=\"append_row()\" />");
+			out.print("<input type= \"button\" value =\"Show results\" onclick=\"append_row();\" />");
 		//}
 		out.print("</p>");
-
 %>
+
 	<script type="text/javascript">
 		function append_row(){
-			$('#advancedRows').append(query.show());
+			$('#advancedRows').append();
 		}
 	
 		$(function(){
 			$("#basicResults").html("<p> </p>");
 		});
 	</script>
-	
+	<a href="results.jsp">CLICK ME!!</a>
 	<div id="advancedRows"></div>
 	</body>
 </html>
