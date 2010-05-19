@@ -11,7 +11,7 @@ response.setDateHeader("Expires",-1);
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Data Validation Tool</title>
 		<link rel="stylesheet" href="css/main.css"/>	
-		<link rel="stylesheet" type="text/css" href="js/jqui/css/cupertino/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="js/jqui/css/cupertino/jquery-ui.css"/>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jqui/js/jquery-ui-1.8.1.custom.min.js"></script>
 		<script type="text/javascript" src="js/utils.js"></script>
