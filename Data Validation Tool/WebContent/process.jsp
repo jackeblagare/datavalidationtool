@@ -286,7 +286,7 @@
 		out.print("ROW COUNT = " + query.getRowCount());
 		out.print("COLUMN COUNT = " + query.getColCount());
 		out.print("<br />");
-		for(int j=0;j < query.getRowCount();j++){
+		for(int j=1;j <= query.getRowCount();j++){
 			for(int i=1;i <= query.getColCount();i++){
 					//if(j == 0){
 						//column names
