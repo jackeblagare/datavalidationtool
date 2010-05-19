@@ -277,7 +277,7 @@
 	</div>
 <%
 	//print advanced query results
-		out.print("<p>SQL query returned "+query.rowCount+" results.  ");
+		out.print("<p>SQL query returned "+query.getRowCount()+" results.  ");
 		//if(query.rowCount > 0){
 			out.print("<input type= \"button\" value =\"Show results\" onclick=\"append_row();\" />");
 		//}
