@@ -10,11 +10,11 @@
 <% 
 	Queries results = new Queries();
 	
-	out.print("ROW COUNT = "+results.rowCount);
-	out.print("COLUMN COUNT = "+results.noOfColumns);
+	out.print("ROW COUNT = " + results.getRowCount());
+	out.print("COLUMN COUNT = " + results.getColCount());
 
-	for(int j=0;j <= results.rowCount;j++){
-		for(int i=1;i <= results.noOfColumns;i++){
+	for(int j=0;j <= results.getRowCount();j++){
+		for(int i=1;i <= results.getColCount();i++){
 				if(j == 0){
 					//column names
 					out.print("Column Name "+ j +" -- "+results.columnNames.get(i));
