@@ -12,7 +12,7 @@
 	<body>
 		<br/>
 		<div id="data" class="container">
-			<form method="post" action="process.jsp" > <!-- FORM -->
+			<form method="post" id="formx" name="formx" action="process.jsp">
     			<ul class="tabs">
         			<li><a href="#tab1">Data Management System</a></li>
         			<li><a href="#tab2">Implementation-specific</a></li>
@@ -156,11 +156,13 @@
  	 			<hr />
  	 			<br />
  	 			 			
+    			<a class="button" id="submitb" href="#"><span>Run</span></a>
     			<input class="button" type="reset" value="RESET"/>
    				<input class="button" id="run" type="submit" value="RUN"/> 
     	    
     	    </form>
 		</div>
 		<div id="indicator"><img src="images/ajax-loader.gif"/><p>Queries are being executed. Please wait.</p>&nbsp;</div>
+		<div id="container2"><p></p></div>
 	</body>
 </html>

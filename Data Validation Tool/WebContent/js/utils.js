@@ -1,5 +1,34 @@
 $(document).ready(function() {
-
+	$('#indicator').hide();
+	
+	/*
+	 * 
+	 *  Displays dialog box upon form submission
+	 * 
+	 */
+	
+	/*
+	$("form").submit(function() {
+		 
+		// we want to store the values from the form input box, then send via ajax below
+		var email     = $('#email').attr('value');
+	 
+			$.ajax({
+				type: "POST",
+				url: "add.php",
+				data: "email=" + email,
+				success: {
+				}
+			});
+		return false;
+		});
+	*/
+	$('#submitb').click(function() {
+		$('#indicator').show();  
+		$('#formx').submit();
+		   
+	});
+	 
 	/*
 		Checks whether a query is selected through the checkboxes. If so, enable RUN button.
 	*/
