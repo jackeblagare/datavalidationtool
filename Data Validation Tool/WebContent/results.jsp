@@ -14,11 +14,11 @@
 		for(int i=1;i <= results.noOfColumns;i++){
 				if(j == 0){
 					//column names
-					out.print(results.columnNames.get(i));
+					out.print("Column Name "+ j +" -- "+results.columnNames.get(i));
 				}
 				else{
 					// data
-					out.print(results.store[i]);
+					out.print("Data Row "+ j +" -- "results.store[i]);
 				}
 		}
 	}
