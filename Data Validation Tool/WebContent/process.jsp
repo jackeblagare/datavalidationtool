@@ -285,16 +285,16 @@
 		
 		out.print("ROW COUNT = " + query.getRowCount());
 		out.print("COLUMN COUNT = " + query.getColCount());
-
+		out.print("<br />");
 		for(int j=0;j <= query.getRowCount();j++){
 			for(int i=1;i <= query.getColCount();i++){
 					if(j == 0){
 						//column names
-						out.print("Column Name "+ j +" -- "+ query.columnNames.get(i));
+						out.print(query.columnNames.get(i)+"----");
 					}
 					else{
 						// data
-						out.print("Data Row "+ j +" -- "+query.store[i]);
+						out.print(query.store[i]+"----");
 					}
 			}
 			out.print("<br />");
