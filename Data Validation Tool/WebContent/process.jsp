@@ -4,6 +4,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Data Validation Tool</title>
 		<link rel="stylesheet" href="css/processEl.css"/>
+		<link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="js/ingrid.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -275,6 +277,34 @@
 	<div id="resultsIc">
 		<h3 id="restxt">Advanced Query Results</h3>
 	</div>
+	
+	<table id = "table1">
+	<thead>
+		<tr>
+			<th>Column 1</th>
+			<th>Column 2</th>
+			<th>Column 3</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Static 1</td>
+			<td>Static 2</td>
+			<td>Static 3</td>
+		</tr>
+		<tr>
+			<td>Static 1</td>
+			<td>Static 2</td>
+			<td>Static 3</td>
+		</tr>
+		<tr>
+			<td>Static 1</td>
+			<td>Static 2</td>
+			<td>Static 3</td>
+		</tr>
+	</tbody>
+	</table>
+	
 <%
 	//print advanced query results
 		out.print("<p>SQL query returned "+query.getRowCount()+" results.  ");
