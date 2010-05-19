@@ -1,4 +1,16 @@
 $(document).ready(function() {
+	
+	var $dialog = $('<div id="#msgBox"></div>')
+	.html('<img src="images/ajax-loader.gif"/><div><h2>Processing request.Please wait.</h2></div>')
+	.dialog({
+		autoOpen: false,
+		title: '',
+		closeOnEscape: false,
+		open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); }
+
+	});
+
+	
 	$('#indicator').hide();
 	
 	/*
@@ -9,6 +21,7 @@ $(document).ready(function() {
 
 	$('#submitb').click(function() {
 		$('#indicator').fadeIn();  
+		$dialog.dialog('open');
 		$('#formx').submit();
 		   
 	});

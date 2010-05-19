@@ -11,8 +11,9 @@ response.setDateHeader("Expires",-1);
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Data Validation Tool</title>
 		<link rel="stylesheet" href="css/main.css"/>	
-		<link rel="stylesheet" href="css/indexEl.css"/>
+		<link rel="stylesheet" type="text/css" href="js/jqui/css/cupertino/jquery-ui.css">
 		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jqui/js/jquery-ui-1.8.1.custom.min.js"></script>
 		<script type="text/javascript" src="js/utils.js"></script>
 	</head>
 
@@ -165,27 +166,13 @@ response.setDateHeader("Expires",-1);
  	 			 			
     			<a class="button" id="submitb" href="#"><span>Run</span></a>
     			<input class="button" type="reset" value="RESET"/>
-   				<input class="button" id="run" type="submit" value="RUN"/> 
     	    
     	    </form>
 		</div>
 		<div id="indicator">
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<div></div>
-			<div></div>
-			<img src="images/ajax-loader.gif"/>
-			<div id="#msgBox"><h2>Processing request.Please wait.</h2></div>
+			
 		</div>
 		<div id="container2"><p></p></div>
+		
 	</body>
 </html>
