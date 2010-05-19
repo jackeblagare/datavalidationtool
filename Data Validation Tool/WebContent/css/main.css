@@ -155,7 +155,6 @@ a.button:active span {
 	top:0px;
 }
 
-h2{
-	background-color: white;
-	
+#msgBox{
+	text-align: center;
 }
