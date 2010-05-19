@@ -286,16 +286,17 @@
 		out.print("ROW COUNT = " + query.getRowCount());
 		out.print("COLUMN COUNT = " + query.getColCount());
 		out.print("<br />");
-		for(int j=0;j <= query.getRowCount();j++){
-			for(int i=1;i <= query.getColCount();i++){
-					//if(j == 0){
+		for(int i=0;i <= query.getRowCount();i++){
+			for(int j=1;j <= query.getColCount();j++){
+					//out.print("HELLO WORLD"+ i +"---"+ j);
+					if(i == 0){
 						//column names
-						//out.print(query.columnNames.get(i)+"----");
-					//}
-					//else{
+						out.print(query.columnNames.get(j - 1)+"----");
+					}
+					else{
 						// data
-						out.print(query.store[j]+"----");
-					//}
+						out.print(query.store[i - 1][j]+"----");
+					}
 			}
 			out.print("<br />");
 		}
