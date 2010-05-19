@@ -294,7 +294,7 @@
 					}
 					else{
 						// data
-						out.print(query.store[i]+"----");
+						out.print(query.store[j]+"----");
 					}
 			}
 			out.print("<br />");
