@@ -3,28 +3,12 @@ $(document).ready(function() {
 	
 	/*
 	 * 
-	 *  Displays dialog box upon form submission
+	 *  Displays screen mask upon form submission
 	 * 
 	 */
-	
-	/*
-	$("form").submit(function() {
-		 
-		// we want to store the values from the form input box, then send via ajax below
-		var email     = $('#email').attr('value');
-	 
-			$.ajax({
-				type: "POST",
-				url: "add.php",
-				data: "email=" + email,
-				success: {
-				}
-			});
-		return false;
-		});
-	*/
+
 	$('#submitb').click(function() {
-		$('#indicator').show();  
+		$('#indicator').fadeIn();  
 		$('#formx').submit();
 		   
 	});
