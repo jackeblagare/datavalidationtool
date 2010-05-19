@@ -11,8 +11,9 @@ public class Queries {
 	public ArrayList<String> columnNames = new ArrayList<String>();
 	public ArrayList<ResultSet> results = new ArrayList<ResultSet>();
 	public ArrayList rowdata = new ArrayList();
-	public int list = 0;
+	public int list = 0,noOfColumns = 0;
 	public ResultSet rs,rs2;
+	public Object[] store;
 	public Connection con;
     public Statement st;
     public int err = 0;
@@ -45,13 +46,13 @@ public class Queries {
 		
 			rs2 = st.executeQuery(sql);
 			ResultSetMetaData rsmd = rs2.getMetaData();
-			int noOfColumns = rsmd.getColumnCount();
-			Object[] store = new Object[noOfColumns + 1];
+			noOfColumns = rsmd.getColumnCount();
+			store = new Object[noOfColumns + 1];
 			while(rs2.next()){
 				for(int i=1;i<=noOfColumns;i++){
 					columnNames.add(rsmd.getColumnName(i));
 					store[i] = rs2.getObject(i);
-					System.out.println("Column"+rsmd.getColumnName(i)+"="+store[i]);
+					//System.out.println("Column"+rsmd.getColumnName(i)+"="+store[i]);
 				} 
 			}
 			
