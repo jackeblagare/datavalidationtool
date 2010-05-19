@@ -11,14 +11,29 @@ public class Queries {
 	public ArrayList<String> columnNames = new ArrayList<String>();
 	public ArrayList<ResultSet> results = new ArrayList<ResultSet>();
 	public ArrayList rowdata = new ArrayList();
-	public int list = 0,noOfColumns = 0;
+	public int list = 0,noOfColumns;
 	public ResultSet rs,rs2;
 	public Object[] store;
 	public Connection con;
     public Statement st;
     public int err = 0;
-    
     public int rowCount; //number of rows returned
+    
+    public void setRowCount(int value){
+    	rowCount = value;
+    }
+    
+    public void setColCount(int value){
+    	noOfColumns = value;
+    }
+    
+    public int getRowCount(){
+    	return rowCount;
+    }
+
+	public int getColCount(){
+		return noOfColumns;
+	}
     
     public String[] getErrors(){
     	return errorsList;	
@@ -46,10 +61,10 @@ public class Queries {
 		
 			rs2 = st.executeQuery(sql);
 			ResultSetMetaData rsmd = rs2.getMetaData();
-			noOfColumns = rsmd.getColumnCount();
-			store = new Object[noOfColumns + 1];
+			setColCount(rsmd.getColumnCount());
+			store = new Object[getColCount() + 1];
 			while(rs2.next()){
-				for(int i=1;i<=noOfColumns;i++){
+				for(int i=1;i<=getColCount();i++){
 					columnNames.add(rsmd.getColumnName(i));
 					store[i] = rs2.getObject(i);
 					//System.out.println("Column"+rsmd.getColumnName(i)+"="+store[i]);
@@ -57,7 +72,7 @@ public class Queries {
 			}
 			
 			rs2.last();
-			rowCount= rs2.getRow();
+			setRowCount(rs2.getRow());
 			
 			rs2.close();
 			st.close();
