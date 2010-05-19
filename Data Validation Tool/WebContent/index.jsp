@@ -164,6 +164,18 @@
 		</div>
 		<div id="indicator">
 			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<div></div>
+			<div></div>
 			<img src="images/ajax-loader.gif"/>
 			<h2>Processing request.Please wait.</h2>
 		</div>
