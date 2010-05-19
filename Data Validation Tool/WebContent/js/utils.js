@@ -1,5 +1,10 @@
 $(document).ready(function() {
 	
+	/*
+	 * 
+	 * Creates the dialog box that appears when queries are being executed
+	 * 
+	 */
 	var $dialog = $('<div></div>')
 	.html('<div id="msgBox"><img src="images/ajax-loader.gif"/><div><h2>Processing request...</h2></div></div>')
 	.dialog({
@@ -13,28 +18,15 @@ $(document).ready(function() {
 
 	});
 
-	
-	/*
-	 * 
-	 *  Displays screen mask upon form submission
-	 * 
-	 */
 
-	$('#submitb').click(function() {
-		$('#indicator').fadeIn();  
-		$dialog.dialog('open');
-		$('#formx').submit();
-		   
-	});
-	 
 	/*
 		Checks whether a query is selected through the checkboxes. If so, enable RUN button.
 	*/
 	$(':checkbox').click(function(){
 		if ($(':checkbox').is(':checked')) {
-        	$('#run').removeAttr('disabled');
+        	$('#submitb').removeAttr('disabled');
     	} else {
-        	$('#run').attr('disabled', true);    
+        	$('#submitb').attr('disabled', true);    
     	}   
 	});
 
@@ -46,10 +38,10 @@ $(document).ready(function() {
 	$("#sql").change(function(){
 		var sql=$("#sql").val();
 		if(sql!=""){
-			$("#run").removeAttr('disabled');
+			$("#submitb").removeAttr('disabled');
 		}
 		else{
-			$('#run').attr('disabled', true);    
+			$('#submitb').attr('disabled', true);    
 		}
 	});
 	
