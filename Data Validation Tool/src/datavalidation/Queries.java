@@ -8,6 +8,7 @@ public class Queries {
 	public String[] queryList = new String[55];
 	public String[] errorsList = new String[55];
 	public String[] errorMsg = new String[55];
+	public ArrayList<String> columnNames = new ArrayList<String>();
 	public ArrayList<ResultSet> results = new ArrayList<ResultSet>();
 	public ArrayList rowdata = new ArrayList();
 	public int list = 0;
@@ -48,6 +49,7 @@ public class Queries {
 			Object[] store = new Object[noOfColumns + 1];
 			while(rs2.next()){
 				for(int i=1;i<=noOfColumns;i++){
+					columnNames.add(rsmd.getColumnName(i));
 					store[i] = rs2.getObject(i);
 					System.out.println("Column"+rsmd.getColumnName(i)+"="+store[i]);
 				} 
