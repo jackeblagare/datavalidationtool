@@ -10,6 +10,9 @@
 <% 
 	Queries results = new Queries();
 	
+	out.print("ROW COUNT = "+results.rowCount);
+	out.print("COLUMN COUNT = "+results.noOfColumns);
+
 	for(int j=0;j <= results.rowCount;j++){
 		for(int i=1;i <= results.noOfColumns;i++){
 				if(j == 0){
