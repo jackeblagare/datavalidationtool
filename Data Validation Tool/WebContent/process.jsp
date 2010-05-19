@@ -290,13 +290,14 @@
 			for(int i=1;i <= query.getColCount();i++){
 					if(j == 0){
 						//column names
-						out.print("Column Name "+ j +" -- "+query.columnNames.get(i));
+						out.print("Column Name "+ j +" -- "+ query.columnNames.get(i));
 					}
 					else{
 						// data
 						out.print("Data Row "+ j +" -- "+query.store[i]);
 					}
 			}
+			out.print("<br />");
 		}
 %>
 
