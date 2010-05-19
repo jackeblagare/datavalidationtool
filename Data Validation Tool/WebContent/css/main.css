@@ -137,24 +137,6 @@ a.button:active span {
 	left: 450px;
 }
 
-#indicator{
-	color: black;
-	text-align: center;
-	filter:alpha(opacity=60);
-	-moz-opacity:0.6;
-	-khtml-opacity: 0.6;
-	opacity: 0.6;
-	background-color: #439b35;
-	height:100%;
-	width:100%;
-	z-index: 0;
-	border-style:solid;
-	border-color: black;
-	position:absolute;
-	left:0px;
-	top:0px;
-}
-
 #msgBox{
 	text-align: center;
 }
