@@ -67,21 +67,15 @@ public class Queries {
 			setRowCount(rs2.getRow());
 			rs2.beforeFirst();
 			store = new Object[getRowCount()][getColCount()+1];
-			//while(rs2.next()){
-			System.out.println("ROWCOUNT "+getRowCount());
-			System.out.println("COLCOUNT "+getColCount());
 				for(int i=0;rs2.next();i++){
-					System.out.println("rows "+ i);
 					for(int j=1;j<=getColCount();j++){
 						if(i == 1){
 							columnNames.add(rsmd.getColumnName(j));
 						}
-						System.out.println("cols" + j);
 						store[i][j] = rs2.getObject(j);
-						//System.out.println("Column"+rsmd.getColumnName(i)+"="+store[i]);
 					} 
 				}
-			//}
+			
 			
 			rs2.last();
 			setRowCount(rs2.getRow());
