@@ -14,7 +14,7 @@ public class Queries {
 	public int list = 0;
 	private int noOfColumns;
 	public ResultSet rs,rs2;
-	public Object[] store;
+	public Object[][] store;
 	public Connection con;
     public Statement st;
     public int err = 0;
@@ -63,14 +63,25 @@ public class Queries {
 			rs2 = st.executeQuery(sql);
 			ResultSetMetaData rsmd = rs2.getMetaData();
 			setColCount(rsmd.getColumnCount());
-			store = new Object[getColCount() + 1];
-			while(rs2.next()){
-				for(int i=1;i<=getColCount();i++){
-					columnNames.add(rsmd.getColumnName(i));
-					store[i] = rs2.getObject(i);
-					//System.out.println("Column"+rsmd.getColumnName(i)+"="+store[i]);
-				} 
-			}
+			rs2.last();
+			setRowCount(rs2.getRow());
+			rs2.beforeFirst();
+			store = new Object[getRowCount()][getColCount()+1];
+			//while(rs2.next()){
+			System.out.println("ROWCOUNT "+getRowCount());
+			System.out.println("COLCOUNT "+getColCount());
+				for(int i=0;rs2.next();i++){
+					System.out.println("rows "+ i);
+					for(int j=1;j<=getColCount();j++){
+						if(i == 1){
+							columnNames.add(rsmd.getColumnName(j));
+						}
+						System.out.println("cols" + j);
+						store[i][j] = rs2.getObject(j);
+						//System.out.println("Column"+rsmd.getColumnName(i)+"="+store[i]);
+					} 
+				}
+			//}
 			
 			rs2.last();
 			setRowCount(rs2.getRow());
