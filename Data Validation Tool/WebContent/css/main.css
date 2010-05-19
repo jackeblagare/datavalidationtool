@@ -138,18 +138,25 @@ a.button:active span {
 }
 
 #indicator{
+	color: black;
 	text-align: center;
-	filter:alpha(opacity=50);
-	-moz-opacity:0.5;
-	-khtml-opacity: 0.5;
-	opacity: 0.5;
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
 	background-color: #439b35;
-	height:150px;
-	width:500px;
+	height:100px;
+	width:400px;
 	z-index: 9000;
-	margin-top: 100px;
 	margin: 30px auto;
 	position: absolute;
 	top: 25%;
 	left: 25%;
+	border-style:solid;
+	border-color: black;
+}
+
+h2{
+	background-color: white;
+	
 }

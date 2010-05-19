@@ -162,7 +162,11 @@
     	    
     	    </form>
 		</div>
-		<div id="indicator"><img src="images/ajax-loader.gif"/><p>Queries are being executed. Please wait.</p>&nbsp;</div>
+		<div id="indicator">
+			<p>&nbsp;</p>
+			<img src="images/ajax-loader.gif"/>
+			<h2>Processing request.Please wait.</h2>
+		</div>
 		<div id="container2"><p></p></div>
 	</body>
 </html>
