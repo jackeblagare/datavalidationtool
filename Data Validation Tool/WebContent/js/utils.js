@@ -3,7 +3,7 @@ $(document).ready(function() {
 	var $dialog = $('<div></div>')
 	.html('<div id="msgBox"><img src="images/ajax-loader.gif"/><div><h2>Processing request...</h2></div></div>')
 	.dialog({
-		autoOpen: true,
+		autoOpen: false,
 		title: '',
 		closeOnEscape: false,
 		draggable: false,
@@ -13,8 +13,6 @@ $(document).ready(function() {
 
 	});
 
-	
-	//$('#indicator').hide();
 	
 	/*
 	 * 
