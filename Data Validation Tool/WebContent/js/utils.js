@@ -17,8 +17,17 @@ $(document).ready(function() {
 		open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); }
 
 	});
-
-
+	
+	/*
+	 * 
+	 * Submits form at click of button
+	 * 
+	 */
+	
+	
+	$("#submitb").click(function(){
+		$('#formx').submit();
+	});
 	/*
 		Checks whether a query is selected through the checkboxes. If so, enable RUN button.
 	*/
