@@ -11,13 +11,14 @@ public class Queries {
 	public ArrayList<String> columnNames = new ArrayList<String>();
 	public ArrayList<ResultSet> results = new ArrayList<ResultSet>();
 	public ArrayList rowdata = new ArrayList();
-	public int list = 0,noOfColumns;
+	public int list = 0;
+	private int noOfColumns;
 	public ResultSet rs,rs2;
 	public Object[] store;
 	public Connection con;
     public Statement st;
     public int err = 0;
-    public int rowCount; //number of rows returned
+    private int rowCount; //number of rows returned
     
     public void setRowCount(int value){
     	rowCount = value;
