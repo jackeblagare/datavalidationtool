@@ -1,17 +1,20 @@
 $(document).ready(function() {
 	
-	var $dialog = $('<div id="#msgBox"></div>')
-	.html('<img src="images/ajax-loader.gif"/><div><h2>Processing request.Please wait.</h2></div>')
+	var $dialog = $('<div></div>')
+	.html('<div id="msgBox"><img src="images/ajax-loader.gif"/><div><h2>Processing request...</h2></div></div>')
 	.dialog({
-		autoOpen: false,
+		autoOpen: true,
 		title: '',
 		closeOnEscape: false,
+		draggable: false,
+		resizable: false,
+		modal: true,
 		open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); }
 
 	});
 
 	
-	$('#indicator').hide();
+	//$('#indicator').hide();
 	
 	/*
 	 * 
