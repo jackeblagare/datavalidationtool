@@ -35,9 +35,7 @@
 	
 		<script type="text/javascript" charset="utf-8"> 
 			$(document).ready(function() {
-				$('#table1').dataTable( {
-					"sPaginationType": "full_numbers"
-				} );
+				$('#table1').dataTable();
 			} );
 		</script>
 	
@@ -67,12 +65,12 @@
 		*/
 		
 		//render table of errors-----
-		out.print("<table class="+"errors"+">");
-		out.print("<th>"+err+" data errors found </th>");
-		for(int i=0;i<err;i++){
-			out.print("<tr><td>"+errorList[i]+"</td></tr>");
-		}
-		out.print("</table>");
+		//out.print("<table class="+"errors"+">");
+		//out.print("<th>"+err+" data errors found </th>");
+		//for(int i=0;i<err;i++){
+		//	out.print("<tr><td>"+errorList[i]+"</td></tr>");
+		//}
+		//out.print("</table>");
 		//render table of errors------
 		%>
 		<div id="resultsIc">
@@ -93,7 +91,8 @@
 		<tr>
 		<%
 			for(int k=1;k <= colNo ;k++){
-				//out.print("<td>"+ colNames[k-1] +"</td>");
+				out.print("<th> aaaa </th>");
+				//out.print("<th>"+ colNames[k-1] +"</th>");
 			}
 		%>
 		</tr>
@@ -103,7 +102,7 @@
 			for(int i=0;i < rowNo;i++){
 				out.print("<tr>");
 				for(int j=1;j <= colNo;j++){
-						out.print("<td>jejeje</td>");
+						out.print("<td> jejeje </td>");
 				}
 				out.print("</tr>");
 			}
