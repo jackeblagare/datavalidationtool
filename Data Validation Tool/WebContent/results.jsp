@@ -8,8 +8,8 @@
 		<title>Data Validation Tool</title>
 		<link rel="icon" href="images/favicon/favicon.ico"/>
 		<link rel="stylesheet" href="css/processEl.css"/>	
-		<link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" />
-		<script type="text/javascript" src="js/jquery.ingrid.js"></script>
+		<!-- <link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" /> -->
+		<script type="text/javascript" src="js/jquery.dataTables.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -17,6 +17,7 @@
 				$(".errors tr:even").addClass("alt");
 			});
 		</script>
+		<!-- 
 		<script type="text/javascript">
 			$(document).ready(
 			function() {
@@ -26,7 +27,16 @@
 				});
 			}
 		); 
-	</script>
+		</script>
+		-->
+	
+		<script type="text/javascript" charset="utf-8"> 
+			$(document).ready(function() {
+				$('#table1').dataTable( {
+					"sPaginationType": "full_numbers"
+				} );
+			} );
+		</script>
 	
 	</head>
 <body>
@@ -75,7 +85,7 @@
 		%>
 		
 		
-		<table id="#table1">
+		<table id="table1">
 		<thead>
 		<tr>
 		<%
