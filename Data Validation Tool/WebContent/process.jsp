@@ -266,6 +266,7 @@
 	if(flag>0){
 		query.callQueries();
 		session.setAttribute("derr",query.err); 
+		
 		session.setAttribute("derrorlist",query.errorsList);
 		
 		//render page-----
