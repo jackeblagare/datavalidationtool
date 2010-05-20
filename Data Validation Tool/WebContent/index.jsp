@@ -1,8 +1,9 @@
 <%
-response.setHeader("Pragma","no-cache");
-response.setHeader("Cache-Control","no-store");
-response.setHeader("Expires","0");
-response.setDateHeader("Expires",-1);
+	//prevents caching of page
+	response.setHeader("Pragma","no-cache");
+	response.setHeader("Cache-Control","no-store");
+	response.setHeader("Expires","0");
+	response.setDateHeader("Expires",-1);
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -19,6 +20,7 @@ response.setDateHeader("Expires",-1);
 	</head>
 
 	<body>
+		<div id="sidebar">&nbsp;</div>
 		<br/>
 		<div id="data" class="container">
 			<form method="post" id="formx" name="formx" action="process.jsp">
@@ -168,7 +170,6 @@ response.setDateHeader("Expires",-1);
     				<a class="button" id="resetb" href="#"><span>Clear</span></a>
     			</div>
     			<div>&nbsp;</div>
-    			
     			<br />
  	 			<hr />
     	    
