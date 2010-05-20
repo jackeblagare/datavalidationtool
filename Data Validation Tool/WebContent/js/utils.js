@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	
+	
 	/*
 	 * 
 	 * Creates the dialog box that appears when queries are being executed
