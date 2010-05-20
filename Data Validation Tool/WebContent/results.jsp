@@ -24,9 +24,9 @@
 		out.print(host +"<br />"+ port +"<br />"+ user +"<br />"+ pwd +"<br />"+ db +"<br />"+ sql);
 		out.print("<br />");
 		out.print("No of errors = " +err);
-		for(int i =0; i<err;i++){
-			out.print("ErrorList "+ i +"=="+ errorList[i]);
-		}
+		//for(int i =0; i<err;i++){
+			//out.print("ErrorList "+ i +"=="+ errorList[i]);
+		//}
 		
 %>
 </body>
