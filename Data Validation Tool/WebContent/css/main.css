@@ -52,7 +52,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
 	border-bottom: 1px solid #fff;
 }
 .tab_container {
-	border: 1px solid #999;
+	border: 1px solid #99CCFF;
 	border-top: none;
 	clear: both;
 	float: left; 
@@ -152,6 +152,5 @@ a.button:active span {
 	left: 0px;
 	height: 100%;
 	width: 200px;
-	background-color: black;
 	z-index: -1;
 }
