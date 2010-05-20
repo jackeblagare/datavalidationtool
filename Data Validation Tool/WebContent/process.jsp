@@ -266,7 +266,6 @@
 	if(flag>0){
 		query.callQueries();
 		session.setAttribute("derr",query.err); 
-		
 		session.setAttribute("derrorlist",query.errorsList);
 		
 		//render page-----
@@ -295,23 +294,19 @@
 	session.setAttribute("ddb",db);
 	session.setAttribute("dsql",sql);
 	
+	//call method to execute query
+	query.executeAdvancedQry(host,port,user,pwd,db,sql);
+	
+	int rowCnt = query.getRowCount();
+	int colCnt = query.getColCount();
+	
+	session.setAttribute("drow",rowCnt);
+	session.setAttribute("dcol",colCnt);
+	session.setAttribute("dcolnames",query.columnNames);
+	session.setAttribute("dstore",query.store);
+	
 	response.sendRedirect("results.jsp");
 	
-	//call method to execute query
-	//query.executeAdvancedQry(host,port,user,pwd,db,sql);
-	
-%>
-	<div id="resultsIc">
-		<h3 id="restxt">Advanced Query Results</h3>
-	</div>
-		
-	<%
-	//print advanced query results
-		out.print("<p>SQL query returned "+query.getRowCount()+" results.  ");
-		//if(query.rowCount > 0){
-			out.print("<input type= \"button\" value =\"Show results\" onclick=\"append_row();\" />");
-		//}
-		out.print("</p>");
 	%>
 	
 	<div>
