@@ -268,12 +268,14 @@
 		session.setAttribute("derr",query.err); 
 		session.setAttribute("derrorlist",query.errorsList);
 		
-		out.print("<table class="+"errors"+">");
-		out.print("<th>"+query.err+" data errors found </th>");
-		for(int i=0;i<query.err;i++){
-			out.print("<tr><td>"+query.errorsList[i]+"</td></tr>");
-		}
-		out.print("</table>");
+		//render page-----
+		//out.print("<table class="+"errors"+">");
+		//out.print("<th>"+query.err+" data errors found </th>");
+		//for(int i=0;i<query.err;i++){
+			//out.print("<tr><td>"+query.errorsList[i]+"</td></tr>");
+		//}
+		//out.print("</table>");
+		//render page------
 	}
 	
 	//Advanced query processing
