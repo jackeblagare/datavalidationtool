@@ -157,12 +157,17 @@ response.setDateHeader("Expires",-1);
 					<p></p><br/>
        			 </div>
     		</div>
-    	
+    			<p></p>
+    			<br/>
+    			<div>&nbsp;</div>
     			<br />
-    			<a class="button" id="selectAllQ" href="#"><span>Select All Queries</span></a> 
-    			<a class="button" id="deselectAllQ" href="#"><span>Deselect All Queries</span></a>
-    			<a class="button" id="submitb" href="#"><span>Run</span></a>
-    			<a class="button" id="resetb" href="#"><span>Clear</span></a>
+    			<div id="ops">
+    				<a class="button" id="selectAllQ" href="#"><span>Select All Queries</span></a> 
+    				<a class="button" id="deselectAllQ" href="#"><span>Deselect All Queries</span></a>
+    				<a class="button" id="submitb" href="#"><span>Run</span></a>
+    				<a class="button" id="resetb" href="#"><span>Clear</span></a>
+    			</div>
+    			<div>&nbsp;</div>
     			
     			<br />
  	 			<hr />
