@@ -10,33 +10,83 @@
 
 <body>
 <%
+	//eto dapat ung may ingrid jquery
+
+		String[] errorList = (String[])session.getAttribute("derrorlist");
 		String _err = session.getAttribute("derr").toString();
 		int err = Integer.parseInt(_err);
-		String[] errorList = (String[])session.getAttribute("derrorlist");
-
+		
+		String _drow = session.getAttribute("drow").toString();
+		String _dcol = session.getAttribute("dcol").toString();
+		int rowNo = Integer.parseInt(_drow);
+		int colNo = Integer.parseInt(_dcol);
+		String[] colNames = (String[])session.getAttribute("dcolnames");
+		String[][] data = (String[][])session.getAttribute("dstore");
+		
+		/*
 		String host = (String)session.getAttribute("dhost");
 		String port = (String)session.getAttribute("dport");
 		String user = (String)session.getAttribute("duser");
 		String pwd = (String)session.getAttribute("dpwd");
 		String db = (String)session.getAttribute("ddb");
 		String sql = (String)session.getAttribute("dsql");
+		*/
 		
-		//render page-----
+		//render table of errors-----
 		out.print("<table class="+"errors"+">");
 		out.print("<th>"+err+" data errors found </th>");
 		for(int i=0;i<err;i++){
 			out.print("<tr><td>"+errorList[i]+"</td></tr>");
 		}
 		out.print("</table>");
-		//render page------
+		//render table of errors------
+		%>
+		<div id="resultsIc">
+			<h3 id="restxt">Advanced Query Results</h3>
+		</div>
+		<%
+		//print advanced query results
+		out.print("<p>SQL query returned "+ rowNo +" results.  ");
+		//if(query.rowCount > 0){
+			out.print("<input type= \"button\" value =\"Show results\" onclick=\"append_row();\" />");
+		//}
+		out.print("</p>");
+		%>
 		
+		<table id="#table1">
+		<thead>
+		<tr>
+		<%
+			for(int k=1;k <= colNo ;k++){
+				out.print("<td>"+ colNames[k-1] +"</td>");
+			}
+		%>
+		</tr>
+		</thead>
+		<tbody>
+		<%
+			for(int i=0;i < rowNo;i++){
+				out.print("<tr>");
+				for(int j=1;j <= colNo;j++){
+						out.print("<td>"+ data[i][j] +"</td>");
+				}
+				out.print("</tr>");
+			}
+		%>
+		</tbody>
+	</table>
+		<%
+		
+		/*
 		out.print(host +"<br />"+ port +"<br />"+ user +"<br />"+ pwd +"<br />"+ db +"<br />"+ sql);
 		out.print("<br />");
-		out.print("No of errors = " +err);
+		out.print("No of errors = " +err+ "<br />");
 		for(int i =0; i<err;i++){
 			out.print("ErrorList "+ i +"=="+ errorList[i]);
 		}
+		*/
 		
 %>
+
 </body>
 </html>
