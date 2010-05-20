@@ -7,8 +7,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Data Validation Tool</title>
 		<link rel="icon" href="images/favicon/favicon.ico"/>
-		<link rel="stylesheet" href="css/processEl.css"/>	
+		<!-- <link rel="stylesheet" href="css/processEl.css"/>	 -->
 		<!-- <link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" /> -->
+		<link rel="stylesheet" href="css/demo_page.css" type="text/css"/>
+		<link rel="stylesheet" href="css/demo_table_jui.css" type="text/css"/>
+		<link rel="stylesheet" href="css/demo_table.css" type="text/css"/>
 		<script type="text/javascript" src="js/jquery.dataTables.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
@@ -84,7 +87,7 @@
 		out.print("</p>");
 		%>
 		
-		
+		<div id="demo">
 		<table id="table1">
 		<thead>
 		<tr>
@@ -100,13 +103,14 @@
 			for(int i=0;i < rowNo;i++){
 				out.print("<tr>");
 				for(int j=1;j <= colNo;j++){
-						out.print("<td> </td>");
+						out.print("<td>jejeje</td>");
 				}
 				out.print("</tr>");
 			}
 		%>
 		</tbody>
 	</table>
+	</div>
 		<%
 		
 		/*
