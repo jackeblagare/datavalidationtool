@@ -331,10 +331,10 @@
 			}
 		%>
 		</tbody>
-	</table>
-	</div>
-	<!-- 
-	<table id="#table1">
+		</table>
+		</div>
+		<!-- 
+		<table id="#table1">
 		<thead>
 		<tr>
 		<%
