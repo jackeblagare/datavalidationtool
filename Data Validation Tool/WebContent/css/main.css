@@ -52,7 +52,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
 	border-bottom: 1px solid #fff;
 }
 .tab_container {
-	border: 1px solid #99CCFF;
+	border: 1px solid #00;
 	border-top: none;
 	clear: both;
 	float: left; 
