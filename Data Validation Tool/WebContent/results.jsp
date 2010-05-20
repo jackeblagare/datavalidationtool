@@ -9,9 +9,18 @@
 		<link rel="icon" href="images/favicon/favicon.ico"/>
 		<!-- <link rel="stylesheet" href="css/processEl.css"/>	 -->
 		<!-- <link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" /> -->
+		
+		<style type="text/css">
+			@import "css/demo_page.css";
+			@import "css/demo_table_jui.css";
+			@import "css/demo_table.css";
+		</style>
+		
+		<!-- 
 		<link rel="stylesheet" href="css/demo_page.css" type="text/css"/>
 		<link rel="stylesheet" href="css/demo_table_jui.css" type="text/css"/>
 		<link rel="stylesheet" href="css/demo_table.css" type="text/css"/>
+		-->
 		<script type="text/javascript" src="js/jquery.dataTables.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
@@ -85,8 +94,26 @@
 		out.print("</p>");
 		%>
 		
-		<div id="demo">
 		<table id="table1">
+			<thead>
+				<tr>
+					<th> one </th>
+					<th> two </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td> three </td>
+					<td> four </td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		<div id="demo">
+		<table id="table2">
 		<thead>
 		<tr>
 		<%
