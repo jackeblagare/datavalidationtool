@@ -331,7 +331,6 @@
 			$("#basicResults").html("<p> </p>");
 		});
 	</script>
-	<a href="results.jsp">CLICK ME!!</a>
 	<div id="advancedRows"></div>
 	</body>
 </ht
