@@ -4,9 +4,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Data Validation Tool</title>
 		<link rel="icon" href="images/favicon/favicon.ico"/>
-		<link rel="stylesheet" href="css/processEl.css"/>
+		<link rel="stylesheet" href="css/processEl.css"/>	
 		<link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" />
-		<script type="text/javascript" src="js/ingrid.js"></script>
+		<script type="text/javascript" src="js/jquery.ingrid.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -18,7 +18,7 @@
 			$(document).ready(
 			function() {
 				$("#table1").ingrid({ 
-					url: 'remote.html',
+					url: 'process.jsp',
 					height: 350
 				});
 			}
@@ -299,7 +299,7 @@
 	%>
 	
 	<div>
-	<table>
+	<table id="#table1">
 		<thead>
 		<tr>
 		<%
