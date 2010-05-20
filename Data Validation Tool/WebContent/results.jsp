@@ -10,7 +10,6 @@
 <body>
 <%
 		String _err = session.getAttribute("derr").toString();
-		out.print(_err);
 		int err = Integer.parseInt(_err);
 		String[] errorList = (String[])session.getAttribute("derrorlist");
 
@@ -24,9 +23,9 @@
 		out.print(host +"<br />"+ port +"<br />"+ user +"<br />"+ pwd +"<br />"+ db +"<br />"+ sql);
 		out.print("<br />");
 		out.print("No of errors = " +err);
-		//for(int i =0; i<err;i++){
-			//out.print("ErrorList "+ i +"=="+ errorList[i]);
-		//}
+		for(int i =0; i<err;i++){
+			out.print("ErrorList "+ i +"=="+ errorList[i]);
+		}
 		
 %>
 </body>
