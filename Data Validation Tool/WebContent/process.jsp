@@ -265,6 +265,10 @@
 	
 	if(flag>0){
 		query.callQueries();
+		session.setAttribute("derr",query.err); 
+		System.out.print(query.err);
+		//session.setAtribute("derrorlist",query.errorsList);
+		
 		out.print("<table class="+"errors"+">");
 		out.print("<th>"+query.err+" data errors found </th>");
 		for(int i=0;i<query.err;i++){
@@ -282,8 +286,18 @@
 	String db = request.getParameter("dbase");
 	String sql = request.getParameter("sql");
 	
+	session.setAttribute("dhost",host);
+	session.setAttribute("dport",port);
+	session.setAttribute("duser",user);
+	session.setAttribute("dpwd",pwd);
+	session.setAttribute("ddb",db);
+	session.setAttribute("dsql",sql);
+	
+	response.sendRedirect("results.jsp");
+	
 	//call method to execute query
-	query.executeAdvancedQry(host,port,user,pwd,db,sql);
+	//query.executeAdvancedQry(host,port,user,pwd,db,sql);
+	
 %>
 	<div id="resultsIc">
 		<h3 id="restxt">Advanced Query Results</h3>
