@@ -4,10 +4,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Data Validation Tool</title>
+		<link rel="icon" href="images/favicon/favicon.ico"/>
+		<link rel="stylesheet" href="css/processEl.css"/>	
+		<link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="js/jquery.ingrid.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".errors tr").mouseover(function() {$(this).addClass("over");}).mouseout(function() {$(this).removeClass("over");});
+				$(".errors tr:even").addClass("alt");
+			});
+		</script>
+		<script type="text/javascript">
+			$(document).ready(
+			function() {
+				$("#table1").ingrid({ 
+					url: 'process.jsp',
+					height: 350
+				});
+			}
+		); 
+	</script>
+	
+	</head>
 <body>
 <%
 	//eto dapat ung may ingrid jquery
@@ -53,6 +74,7 @@
 		out.print("</p>");
 		%>
 		
+		
 		<table id="#table1">
 		<thead>
 		<tr>
@@ -68,7 +90,7 @@
 			for(int i=0;i < rowNo;i++){
 				out.print("<tr>");
 				for(int j=1;j <= colNo;j++){
-						out.print("<td>"+ data[i][j] +"</td>");
+						out.print("<td> </td>");
 				}
 				out.print("</tr>");
 			}
