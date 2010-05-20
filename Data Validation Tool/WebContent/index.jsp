@@ -169,7 +169,5 @@ response.setDateHeader("Expires",-1);
     	    
     	    </form>
 		</div>
-		<div id="container2"><p></p></div>
-		
 	</body>
 </html>
