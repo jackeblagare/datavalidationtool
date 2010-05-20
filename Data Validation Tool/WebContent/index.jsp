@@ -10,6 +10,7 @@ response.setDateHeader("Expires",-1);
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Data Validation Tool</title>
+		<link rel="icon" href="images/favicon/favicon.ico"/>
 		<link rel="stylesheet" href="css/main.css"/>	
 		<link rel="stylesheet" type="text/css" href="js/jqui/css/cupertino/jquery-ui.css"/>
 		<script type="text/javascript" src="js/jquery.js"></script>
@@ -165,7 +166,7 @@ response.setDateHeader("Expires",-1);
  	 			<br />
  	 			 			
     			<a class="button" id="submitb" href="#"><span>Run</span></a>
-    			<input class="button" type="reset" value="RESET"/>
+    			<a class="button" id="resetb" href="#"><span>Clear</span></a>
     	    
     	    </form>
 		</div>
