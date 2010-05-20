@@ -6,7 +6,7 @@ $(document).ready(function() {
 	 * 
 	 */
 	var $dialog = $('<div></div>')
-	.html('<div id="msgBox"><img src="images/ajax-loader.gif"/><div><h2>Processing request...</h2></div></div>')
+	.html('<div id="msgBox"><img src="images/ajax-loader.gif"/><h2>Processing request...</h2></div>')
 	.dialog({
 		autoOpen: false,
 		title: '',
@@ -26,8 +26,20 @@ $(document).ready(function() {
 	
 	
 	$("#submitb").click(function(){
+		$dialog.dialog('open');
 		$('#formx').submit();
 	});
+	
+	/*
+	 * 
+	 * Reset all form values except text fields and hidden fields
+	 * 
+	 */
+	$("#resetb").click(function(){
+		$(':input','#formx').not(':text,:hidden').val('').removeAttr('checked').removeAttr('selected');
+	});
+	
+	
 	/*
 		Checks whether a query is selected through the checkboxes. If so, enable RUN button.
 	*/
