@@ -20,8 +20,8 @@
 		String _dcol = session.getAttribute("dcol").toString();
 		int rowNo = Integer.parseInt(_drow);
 		int colNo = Integer.parseInt(_dcol);
-		String[] colNames = (String[])session.getAttribute("dcolnames");
-		String[][] data = (String[][])session.getAttribute("dstore");
+		//String[] colNames = (String[])session.getAttribute("dcolnames");
+		Object[][] data = (Object[][]) session.getAttribute("dstore");
 		
 		/*
 		String host = (String)session.getAttribute("dhost");
@@ -58,7 +58,7 @@
 		<tr>
 		<%
 			for(int k=1;k <= colNo ;k++){
-				out.print("<td>"+ colNames[k-1] +"</td>");
+				//out.print("<td>"+ colNames[k-1] +"</td>");
 			}
 		%>
 		</tr>
