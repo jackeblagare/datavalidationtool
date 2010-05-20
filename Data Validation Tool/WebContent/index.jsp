@@ -165,7 +165,7 @@ response.setDateHeader("Expires",-1);
  	 			<hr />
  	 			<br />
  	 			 			
-    			<a class="button" id="submitb" href="#"><span>Run</span></a>
+    			<div id="subdiv"><a class="button" id="submitb" href="#"><span>Run</span></a></div>
     			<a class="button" id="resetb" href="#"><span>Clear</span></a>
     	    
     	    </form>
