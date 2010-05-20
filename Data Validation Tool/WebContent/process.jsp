@@ -266,8 +266,7 @@
 	if(flag>0){
 		query.callQueries();
 		session.setAttribute("derr",query.err); 
-		System.out.print(query.err);
-		//session.setAtribute("derrorlist",query.errorsList);
+		session.setAttribute("derrorlist",query.errorsList);
 		
 		out.print("<table class="+"errors"+">");
 		out.print("<th>"+query.err+" data errors found </th>");
