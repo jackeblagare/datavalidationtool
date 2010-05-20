@@ -333,7 +333,30 @@
 		</tbody>
 	</table>
 	</div>
-
+	<!-- 
+	<table id="#table1">
+		<thead>
+		<tr>
+		<%
+			/*for(int k=1;k <= colNo ;k++){
+				//out.print("<td>"+ colNames[k-1] +"</td>");
+			}*/
+		%>
+		</tr>
+		</thead>
+		<tbody>
+		<%
+		/*	for(int i=0;i < rowNo;i++){
+				out.print("<tr>");
+				for(int j=1;j <= colNo;j++){
+						out.print("<td>"+ data[i][j] +"</td>");
+				}
+				out.print("</tr>");
+			}*/
+		%>
+		</tbody>
+	</table>
+	-->
 	<script type="text/javascript">
 		function append_row(){
 			$('#advancedRows').append();
