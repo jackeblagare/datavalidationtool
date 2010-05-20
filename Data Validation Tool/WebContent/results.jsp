@@ -11,7 +11,7 @@
 <%
 	Queries results = new Queries();
 
-	out.print(results.getRowCount()+" "+results.getColcount());
+	out.print(results.getRowCount()+" "+results.getColCount());
 %>
 </body>
 </html>
