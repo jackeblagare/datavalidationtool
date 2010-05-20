@@ -7,7 +7,7 @@ $(document).ready(function() {
 	 * 
 	 */
 	var $dialog = $('<div></div>')
-	.html('<div id="msgBox"><img src="images/ajax-loader.gif"/><h2>Processing request...</h2></div>')
+	.html('<div id="msgBox"><p></p><img src="images/ajax-loader.gif"/><p>Processing request...</p></div>')
 	.dialog({
 		autoOpen: false,
 		title: '',
@@ -28,6 +28,7 @@ $(document).ready(function() {
 	
 	$("#submitb").click(function(){
 		$dialog.dialog('open');
+		$(".ui-dialog-titlebar").hide(); //hides title bar
 		$('#formx').submit();
 	});
 	
