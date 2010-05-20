@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
 <body>
 <%
 		String _err = session.getAttribute("derr").toString();
@@ -19,7 +20,16 @@
 		String pwd = (String)session.getAttribute("dpwd");
 		String db = (String)session.getAttribute("ddb");
 		String sql = (String)session.getAttribute("dsql");
-
+		
+		//render page-----
+		out.print("<table class="+"errors"+">");
+		out.print("<th>"+err+" data errors found </th>");
+		for(int i=0;i<err;i++){
+			out.print("<tr><td>"+errorList[i]+"</td></tr>");
+		}
+		out.print("</table>");
+		//render page------
+		
 		out.print(host +"<br />"+ port +"<br />"+ user +"<br />"+ pwd +"<br />"+ db +"<br />"+ sql);
 		out.print("<br />");
 		out.print("No of errors = " +err);
