@@ -7,8 +7,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Data Validation Tool</title>
 		<link rel="icon" href="images/favicon/favicon.ico"/>
-		<!-- <link rel="stylesheet" href="css/processEl.css"/>	 -->
-		<link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/processEl.css"/>
+		<!--<link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" /> -->
 		
 		<style type="text/css">
 			@import "css/demo_page.css";
