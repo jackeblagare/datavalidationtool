@@ -29,19 +29,7 @@
 				$(".errors tr:even").addClass("alt");
 			});
 		</script>
-		<!-- 
-		<script type="text/javascript">
-			$(document).ready(
-			function() {
-				$("#table1").ingrid({ 
-					url: 'process.jsp',
-					height: 350
-				});
-			}
-		); 
-		</script>
-		-->
-	
+		
 		<script type="text/javascript" charset="utf-8"> 
 			$(document).ready(function() {
 				$('#table1').dataTable();
