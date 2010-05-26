@@ -42,6 +42,12 @@ public class Queries {
      * 
      */
     public ResultSet getRs(){
+    	try {
+			rs2.first();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	return rs2;
     }
     public void setRowCount(int value){
