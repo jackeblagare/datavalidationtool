@@ -1,4 +1,5 @@
 <%@ page import = "datavalidation.*" %>
+<%@ page import ="java.sql.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -286,6 +287,7 @@
 	int rowCnt = query.getRowCount();
 	int colCnt = query.getColCount();
 	
+	ResultSet rs2 = query.getRs();
 	%>
 	<h2>Advanced Query Results</h2>
 	<div id="container">
@@ -296,20 +298,23 @@
 			<tr>
 				<%
 				for(int k=1;k <= query.getColCount();k++){
-					out.println("<th>"+ query.columnNames.get(k - 1) +"</th>");
+					out.println("<th>"+query.columnNames.get(k - 1)+"</th>");
 				}
 				%>
 			</tr>
 		</thead>
 		<tbody>
 			<%
-			for(int i=0;i < query.getRowCount();i++){
-			out.println("<tr>");
-			for(int j=1;j <= query.getColCount();j++){
-				out.println("<td>"+ query.store[i][j] +"</td>");
+			
+			//renders results of advanced query
+			for(int i=0;i<rowCnt;i++){
+				out.println("<tr>");									
+				for(int j=1;j<=colCnt;j++){
+					out.println("<td>"+rs2.getObject(j)+"</td>");	
+				}	
+				out.println("</tr>");
 			}
-			out.println("</tr>");
-			}
+			query.closeDb(); //closes ResultSet,Statement,and Connection
 		%>
 		</tbody>
 	</table>

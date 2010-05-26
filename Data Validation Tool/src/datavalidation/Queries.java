@@ -20,6 +20,20 @@ public class Queries {
     public int err = 0;
     private int rowCount; //number of rows returned
     
+    public void closeDb(){
+    	try {
+			rs2.close();
+			st.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
+    public ResultSet getRs(){
+    	return rs2;
+    }
     public void setRowCount(int value){
     	rowCount = value;
     }
@@ -80,9 +94,6 @@ public class Queries {
 			rs2.last();
 			setRowCount(rs2.getRow());
 			
-			rs2.close();
-			st.close();
-			con.close();
     	}
     	catch(SQLException e){
     		e.printStackTrace();
