@@ -20,6 +20,11 @@ public class Queries {
     public int err = 0;
     private int rowCount; //number of rows returned
     
+    /*
+     * 
+     * closes all database resources
+     * 
+     */
     public void closeDb(){
     	try {
 			rs2.close();
@@ -31,6 +36,11 @@ public class Queries {
 		}
     }
     
+    /*
+     * 
+     * returns the ResultSet of the advanced query
+     * 
+     */
     public ResultSet getRs(){
     	return rs2;
     }
