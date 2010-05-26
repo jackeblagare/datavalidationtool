@@ -22,16 +22,6 @@
 				oTable = $('#example').dataTable();
 			} );
 			
-			function fnClickAddRow() {
-				oTable.fnAddData( [
-					giCount+".1",
-					giCount+".2",
-					giCount+".3",
-					giCount+".4",
-					giCount+".5" ] );
-				
-				giCount++;
-			}
 		</script>
 	</head>
 	<body id="dt_example">

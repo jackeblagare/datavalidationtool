@@ -1,37 +1,29 @@
+<%@ page import = "datavalidation.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Data Validation Tool</title>
+		<style type="text/css" title="currentStyle">
+			@import "css/demo_page.css";
+			@import "css/demo_table.css";
+		</style>
 		<link rel="icon" href="images/favicon/favicon.ico"/>
 		<link rel="stylesheet" href="css/processEl.css"/>	
-		<link rel="stylesheet" href="css/ingrid.css" type="text/css" media="screen" />
-		<script type="text/javascript" src="js/jquery.ingrid.js"></script>
+		<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
-			$(document).ready(function(){
+			var oTable;
+			$(document).ready(function() {
 				$(".errors tr").mouseover(function() {$(this).addClass("over");}).mouseout(function() {$(this).removeClass("over");});
 				$(".errors tr:even").addClass("alt");
+				oTable = $('#example').dataTable();
 			});
 		</script>
-		<script type="text/javascript">
-			$(document).ready(
-			function() {
-				$("#table1").ingrid({ 
-					url: 'process.jsp',
-					height: 350
-				});
-			}
-		); 
-	</script>
 	
 	</head>
 	
-	<body>
-	
-		<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-		<%@ page import = "datavalidation.*" %>
-    
+	<body id="dt_example">
 		<%
 			Queries query = new Queries();	
 		
@@ -269,12 +261,12 @@
 		session.setAttribute("derrorlist",query.errorsList);
 		
 		//render page-----
-		//out.print("<table class="+"errors"+">");
-		//out.print("<th>"+query.err+" data errors found </th>");
-		//for(int i=0;i<query.err;i++){
-			//out.print("<tr><td>"+query.errorsList[i]+"</td></tr>");
-		//}
-		//out.print("</table>");
+		out.print("<table class="+"errors"+">");
+		out.print("<th>"+query.err+" data errors found </th>");
+		for(int i=0;i<query.err;i++){
+			out.print("<tr><td>"+query.errorsList[i]+"</td></tr>");
+		}
+		out.print("</table>");
 		//render page------
 	}
 	
@@ -287,85 +279,41 @@
 	String db = request.getParameter("dbase");
 	String sql = request.getParameter("sql");
 	
-	session.setAttribute("dhost",host);
-	session.setAttribute("dport",port);
-	session.setAttribute("duser",user);
-	session.setAttribute("dpwd",pwd);
-	session.setAttribute("ddb",db);
-	session.setAttribute("dsql",sql);
-	
+
 	//call method to execute query
 	query.executeAdvancedQry(host,port,user,pwd,db,sql);
 	
 	int rowCnt = query.getRowCount();
 	int colCnt = query.getColCount();
 	
-	session.setAttribute("drow",rowCnt);
-	session.setAttribute("dcol",colCnt);
-	session.setAttribute("dcolnames",query.columnNames);
-	session.setAttribute("dstore",query.store);
-	
-	response.sendRedirect("results.jsp");
-	
 	%>
-	
-	<div>
-	<table id="#table1">
+	<h2>Advanced Query Results</h2>
+	<div id="container">
+		
+			<div id="demo">
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
 		<thead>
-		<tr>
-		<%
-			for(int k=1;k <= query.getColCount();k++){
-				out.print("<td>"+ query.columnNames.get(k - 1) +"</td>");
-			}
-		%>
-		</tr>
+			<tr>
+				<%
+				for(int k=1;k <= query.getColCount();k++){
+					out.println("<td>"+ query.columnNames.get(k - 1) +"</td>");
+				}
+				%>
+			</tr>
 		</thead>
 		<tbody>
-		<%
+			<%
 			for(int i=0;i < query.getRowCount();i++){
-				out.print("<tr>");
-				for(int j=1;j <= query.getColCount();j++){
-						out.print("<td>"+ query.store[i][j] +"</td>");
-				}
-				out.print("</tr>");
+			out.println("<tr>");
+			for(int j=1;j <= query.getColCount();j++){
+				out.println("<td>"+ query.store[i][j] +"</td>");
 			}
-		%>
-		</tbody>
-		</table>
-		</div>
-		<!-- 
-		<table id="#table1">
-		<thead>
-		<tr>
-		<%
-			/*for(int k=1;k <= colNo ;k++){
-				//out.print("<td>"+ colNames[k-1] +"</td>");
-			}*/
-		%>
-		</tr>
-		</thead>
-		<tbody>
-		<%
-		/*	for(int i=0;i < rowNo;i++){
-				out.print("<tr>");
-				for(int j=1;j <= colNo;j++){
-						out.print("<td>"+ data[i][j] +"</td>");
-				}
-				out.print("</tr>");
-			}*/
+			out.println("</tr>");
+			}
 		%>
 		</tbody>
 	</table>
-	-->
-	<script type="text/javascript">
-		function append_row(){
-			$('#advancedRows').append();
-		}
-	
-		$(function(){
-			$("#basicResults").html("<p> </p>");
-		});
-	</script>
-	<div id="advancedRows"></div>
+		</div>
+	</div>
 	</body>
 </html>
