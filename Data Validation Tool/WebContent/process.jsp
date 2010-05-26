@@ -296,7 +296,7 @@
 			<tr>
 				<%
 				for(int k=1;k <= query.getColCount();k++){
-					out.println("<td>"+ query.columnNames.get(k - 1) +"</td>");
+					out.println("<th>"+ query.columnNames.get(k - 1) +"</th>");
 				}
 				%>
 			</tr>
